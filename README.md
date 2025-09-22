@@ -4,7 +4,7 @@ A modern React-based Content Management System for managing news content, built 
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://your-username.github.io/cms-dashboard-news-management)
+[View Live Demo](https://ashutoshxsingh10.github.io/cms-dashboard-news-management/)
 
 ## ✨ Features
 
