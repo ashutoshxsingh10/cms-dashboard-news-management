@@ -60,5 +60,5 @@
           "preview": "vite preview",
           "deploy": "npm run build && gh-pages -d build"
       },
-      "homepage": "https://your-username.github.io/cms-dashboard-news-management"
+      "homepage": "https://ashutoshxsingh10.github.io/cms-dashboard-news-management"
   }
