@@ -81,17 +81,13 @@ export default function App() {
   const [isRoundupPublishModalOpen, setIsRoundupPublishModalOpen] = useState(false);
   const [isRoundupArchiveModalOpen, setIsRoundupArchiveModalOpen] = useState(false);
 
-  // Check if disclaimer has been shown before
+  // Show disclaimer on every page load/refresh
   useEffect(() => {
-    const disclaimerShown = localStorage.getItem('cms-disclaimer-shown');
-    if (!disclaimerShown) {
-      setIsDisclaimerModalOpen(true);
-    }
+    setIsDisclaimerModalOpen(true);
   }, []);
 
   // Handle disclaimer acknowledgment
   const handleDisclaimerClose = () => {
-    localStorage.setItem('cms-disclaimer-shown', 'true');
     setIsDisclaimerModalOpen(false);
   };
 
