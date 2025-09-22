@@ -32,10 +32,6 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          # If you use env vars in build, set them here
-          # VITE_API_URL: ${{ secrets.VITE_API_URL }}
-          # etc.
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
