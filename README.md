@@ -2,11 +2,9 @@
 
 A modern React-based Content Management System for managing news content, built with TypeScript, Tailwind CSS, and shadcn/ui components.
 
-![CMS Dashboard](https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjBjbXMlMjBuZXdzfGVufDF8fHx8MTc1NTcwNzY5MXww&ixlib=rb-4.1.0&q=80&w=1080)
-
 ## 🚀 Live Demo
 
-[View Live Demo](https://your-username.github.io/cms-dashboard-news-management)
+[View Live Demo](https://ashutoshxsingh10.github.io/cms-dashboard-news-management/)
 
 ## ✨ Features
 
@@ -144,17 +142,7 @@ src/
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [shadcn/ui](https://ui.shadcn.com/) for the amazing component library
-- [Unsplash](https://unsplash.com) for the beautiful images
-- [Figma](https://figma.com) for the original design inspiration
-
-## 📞 Support
 
 If you have any questions or need help, please open an issue on GitHub.
 
