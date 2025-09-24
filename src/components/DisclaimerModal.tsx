@@ -29,9 +29,9 @@ export function DisclaimerModal({ isOpen, onClose }: DisclaimerModalProps) {
             <div className="flex items-start gap-3">
               <Code2 className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
               <div className="space-y-2">
-                <h4 className="font-medium text-gray-900">Aspirational Version Prototype</h4>
+                <h4 className="font-medium text-gray-900">Built with ❤️ and Cursor + Figma</h4>
                 <p className="text-sm text-gray-600">
-                  Created by <strong>Ashutosh Singh</strong> from ground up with hardcoded content. This represents the way I wanted the product to be, with potential differences from the case study version.
+                  Created by <strong>Ashutosh Singh</strong> using <strong>AI-powered development</strong> with <strong>Cursor</strong> and <strong>Figma</strong>. This prototype showcases modern AI-assisted coding capabilities, built from ground up with hardcoded content to represent the ideal product vision.
                 </p>
               </div>
             </div>
