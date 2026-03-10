@@ -79,7 +79,7 @@ export function CreateRoundupModal({ isOpen, onClose, onProceed }: CreateRoundup
 
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-[500px]">
+      <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle>Create New Roundup</DialogTitle>
           <DialogDescription>
@@ -178,12 +178,7 @@ export function CreateRoundupModal({ isOpen, onClose, onProceed }: CreateRoundup
           </Button>
           <Button 
             onClick={handleProceed}
-            style={{
-              backgroundColor: '#5767F2',
-              borderColor: '#2533B0',
-              color: 'white'
-            }}
-            className="border hover:opacity-90"
+            className="bg-primary text-primary-foreground hover:bg-primary/90"
           >
             Proceed
           </Button>

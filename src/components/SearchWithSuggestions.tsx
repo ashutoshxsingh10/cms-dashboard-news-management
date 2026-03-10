@@ -264,7 +264,7 @@ export function SearchWithSuggestions({
       </div>
 
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg border border-[#D9D9D9] shadow-xl z-50 overflow-hidden">
+        <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg border border-input-border shadow-xl z-50 overflow-hidden">
           <div className="max-h-80 w-full">
             {/* Search Tips Header */}
             {value.trim() === '' && (

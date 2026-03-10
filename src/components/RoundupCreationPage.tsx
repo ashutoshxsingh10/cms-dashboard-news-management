@@ -556,7 +556,7 @@ export function RoundupCreationPage({
                         </Button>
 
                         {/* Order number */}
-                        <div className="absolute top-2 left-2 w-5 h-5 bg-[#5767F2] text-white text-xs rounded-full flex items-center justify-center font-medium z-20">
+                        <div className="absolute top-2 left-2 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center font-medium z-20">
                           {index + 1}
                         </div>
 
@@ -600,12 +600,7 @@ export function RoundupCreationPage({
             <Button 
               onClick={handleContinue}
               disabled={selectedArticleIds.length < 5}
-              style={{
-                backgroundColor: selectedArticleIds.length >= 5 ? '#5767F2' : undefined,
-                borderColor: selectedArticleIds.length >= 5 ? '#2533B0' : undefined,
-                color: selectedArticleIds.length >= 5 ? 'white' : undefined
-              }}
-              className="border hover:opacity-90 disabled:opacity-50"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
             >
               Continue
             </Button>

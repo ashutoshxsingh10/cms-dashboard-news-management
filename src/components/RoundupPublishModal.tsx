@@ -431,7 +431,7 @@ export function RoundupPublishModal({
           <Button 
             onClick={handleConfirm}
             disabled={Object.keys(errors).some(key => errors[key])}
-            className="bg-[#5767F2] hover:bg-[#2533B0] text-white"
+            className="bg-primary text-primary-foreground hover:bg-primary/90"
           >
             Publish Roundup
           </Button>

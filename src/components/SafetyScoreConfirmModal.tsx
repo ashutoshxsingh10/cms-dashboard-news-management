@@ -75,7 +75,7 @@ export function SafetyScoreConfirmModal({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="max-w-md">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Shield className="h-5 w-5 text-primary" />
@@ -91,7 +91,7 @@ export function SafetyScoreConfirmModal({
           <div className="flex items-center justify-between p-4 bg-muted rounded-lg">
             <span className="text-sm font-medium">New Safety Rating:</span>
             <div 
-              className={`flex items-center gap-2 rounded-[8px] border px-3 py-2 ${newTierInfo.textColor}`}
+              className={`flex items-center gap-2 rounded-lg border px-3 py-2 ${newTierInfo.textColor}`}
               style={{ 
                 borderColor: newTierInfo.borderColor,
                 backgroundColor: newTierInfo.backgroundColor
@@ -125,12 +125,7 @@ export function SafetyScoreConfirmModal({
           </Button>
           <Button 
             onClick={onConfirm}
-            style={{
-              backgroundColor: '#5767F2',
-              borderColor: '#2533B0',
-              color: 'white'
-            }}
-            className="border hover:opacity-90"
+            className="bg-primary text-primary-foreground hover:bg-primary/90"
           >
             Update Rating
           </Button>

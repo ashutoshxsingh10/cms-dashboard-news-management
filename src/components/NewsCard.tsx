@@ -74,8 +74,8 @@ export function NewsCard({
         isRoundupCreation ? 'h-auto' : 'h-[120px]'
       } ${isSelected ? 'border-2' : ''}`}
       style={{
-        backgroundColor: isSelected ? '#F0F1FC' : '#F4F6F7',
-        borderColor: isSelected ? '#5767F2' : 'transparent',
+        backgroundColor: isSelected ? 'var(--surface-selected)' : 'var(--surface)',
+        borderColor: isSelected ? 'var(--primary)' : 'transparent',
         borderRadius: '8px'
       }}
       onClick={handleCardClick}
@@ -86,8 +86,7 @@ export function NewsCard({
       {/* New article indicator dot - top left corner - only for pending articles */}
       {isNew && !showCheckbox && article.status === 'pending' && (
         <div 
-          className="absolute top-2 left-2 w-1.5 h-1.5 rounded-full z-10"
-          style={{ backgroundColor: '#5767F2' }}
+          className="absolute top-2 left-2 w-1.5 h-1.5 rounded-full z-10 bg-primary"
         />
       )}
 

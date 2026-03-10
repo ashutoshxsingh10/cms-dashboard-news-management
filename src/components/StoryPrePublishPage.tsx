@@ -160,12 +160,7 @@ export function StoryPrePublishPage({
                   <div className="flex gap-3">
                     <Button 
                       onClick={() => handleStoryAction('publish')}
-                      style={{
-                        backgroundColor: '#5767F2',
-                        borderColor: '#2533B0',
-                        color: 'white'
-                      }}
-                      className="flex items-center gap-2 border hover:opacity-90"
+                      className="flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
                     >
                       <Send className="h-4 w-4" />
                       Publish Story
@@ -175,7 +170,7 @@ export function StoryPrePublishPage({
               </div>
             </div>
           ) : (
-            <div className="h-full flex items-center justify-center" style={{ backgroundColor: '#F4F6F7' }}>
+            <div className="h-full flex items-center justify-center bg-surface">
               <div className="text-center">
                 <div className="text-muted-foreground mb-2">No article selected</div>
                 <p className="text-sm text-muted-foreground">

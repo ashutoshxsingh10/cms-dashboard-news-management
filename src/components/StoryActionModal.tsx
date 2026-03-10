@@ -104,7 +104,7 @@ export function StoryActionModal({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[480px]">
+      <DialogContent className="sm:max-w-lg">
         <DialogHeader className="space-y-3">
           <div className="flex items-center gap-3">
             {config.icon}

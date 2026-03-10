@@ -11,10 +11,10 @@ interface DisclaimerModalProps {
 export function DisclaimerModal({ isOpen, onClose }: DisclaimerModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-lg">
+      <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-3">
-            <div className="p-2 bg-primary/10 rounded-lg">
+            <div className="p-2 bg-primary/10 rounded-full">
               <Info className="h-5 w-5 text-primary" />
             </div>
             Prototype Disclaimer

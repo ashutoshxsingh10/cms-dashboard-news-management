@@ -50,3 +50,10 @@ export function getSafetyTierInfo(tier: number): SafetyTierInfoWithIcon {
       };
   }
 }
+
+export function getSafetyScorePadding(variant: 'default' | 'details' | 'number-only', size: 'sm' | 'md'): string {
+  if (variant === 'details') {
+    return size === 'sm' ? 'px-1 py-1' : 'px-2 py-1.5';
+  }
+  return size === 'sm' ? 'px-2 py-1' : 'px-3 py-1.5';
+}

@@ -104,7 +104,7 @@ export function NewsDetail({
 
   if (!article) {
     return (
-      <div className="h-full flex items-center justify-center" style={{ backgroundColor: '#F4F6F7' }}>
+      <div className="h-full flex items-center justify-center bg-surface">
         <div className="text-center">
           <div className="text-muted-foreground mb-2">No article selected</div>
           <p className="text-sm text-muted-foreground">
@@ -450,12 +450,7 @@ export function NewsDetail({
               <div className="flex gap-3">
                 <Button 
                   onClick={() => onRoundupActionClick?.('resume')}
-                  style={{
-                    backgroundColor: '#5767F2',
-                    borderColor: '#2533B0',
-                    color: 'white'
-                  }}
-                  className="border hover:opacity-90"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90"
                 >
                   Resume Round-up
                 </Button>
@@ -527,12 +522,7 @@ export function NewsDetail({
               </Button>
               <Button 
                 onClick={handleBulkPublishClick}
-                style={{
-                  backgroundColor: '#5767F2',
-                  borderColor: '#2533B0',
-                  color: 'white'
-                }}
-                className="border hover:opacity-90"
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
                 disabled={selectedArticleIds.length === 0}
               >
                 Publish {selectedArticleIds.length} Article{selectedArticleIds.length !== 1 ? 's' : ''}
@@ -544,7 +534,7 @@ export function NewsDetail({
         return (
           <>
             <div className="flex">
-              <Button 
+              <Button
                 onClick={handleRejectClick}
                 variant="outline"
                 className="text-red-600 border-red-600 hover:bg-red-50"
@@ -554,14 +544,9 @@ export function NewsDetail({
               </Button>
             </div>
             <div className="flex gap-3">
-              <Button 
+              <Button
                 onClick={handleBulkPublishClick}
-                style={{
-                  backgroundColor: '#5767F2',
-                  borderColor: '#2533B0',
-                  color: 'white'
-                }}
-                className="border hover:opacity-90"
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
                 disabled={selectedArticleIds.length === 0}
               >
                 Publish {selectedArticleIds.length} Article{selectedArticleIds.length !== 1 ? 's' : ''}
@@ -610,12 +595,7 @@ export function NewsDetail({
               </Button>
               <Button 
                 onClick={handlePublishClick}
-                style={{
-                  backgroundColor: '#5767F2',
-                  borderColor: '#2533B0',
-                  color: 'white'
-                }}
-                className="border hover:opacity-90"
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 Publish
               </Button>
@@ -638,12 +618,7 @@ export function NewsDetail({
             <div className="flex gap-3">
               <Button 
                 onClick={handlePublishClick}
-                style={{
-                  backgroundColor: '#5767F2',
-                  borderColor: '#2533B0',
-                  color: 'white'
-                }}
-                className="border hover:opacity-90"
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 Publish
               </Button>
@@ -711,11 +686,10 @@ export function NewsDetail({
                 className="p-4 rounded-2xl" 
                 style={{
                   height: '96px',
-                  backgroundColor: '#F4F5FC',
                   border: isBreaking ? '1px solid #873DFF' : 'none',
-                  background: isBreaking 
-                    ? 'linear-gradient(90deg, rgba(135, 61, 255, 0.10) 0%, rgba(255, 24, 24, 0.10) 100%), #F4F5FC'
-                    : '#F4F5FC'
+                  background: isBreaking
+                    ? 'linear-gradient(90deg, rgba(135, 61, 255, 0.10) 0%, rgba(255, 24, 24, 0.10) 100%), var(--surface-accent)'
+                    : 'var(--surface-accent)'
                 }}
               >
                 <div className="flex items-start justify-between gap-4 h-full">

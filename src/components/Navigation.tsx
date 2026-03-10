@@ -127,7 +127,6 @@ export function Navigation({ activeTab, onTabChange, articles, roundups, newsSto
                 {isActive && (
                   <div 
                     className="w-8 h-1 bg-primary rounded-full mt-[5px]"
-                    style={{ backgroundColor: '#5767F2' }}
                   />
                 )}
               </div>
