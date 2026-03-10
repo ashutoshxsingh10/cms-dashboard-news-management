@@ -3,27 +3,7 @@ import { Checkbox } from "./ui/checkbox";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { SafetyScoreTag } from "./SafetyScoreTag";
 import { Clock, FileText, Video } from "lucide-react";
-
-interface NewsArticle {
-  id: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  source: string;
-  sourceIcon: string;
-  ingestionTime: string;
-  isBreaking?: boolean;
-  contentType: 'article' | 'video';
-  safetyScore: number;
-  originalSafetyScore?: number;
-  newsType: string;
-  subType: string[];
-  imageUrl: string;
-  status: 'pending' | 'review' | 'rejected' | 'published';
-  publishStatus?: 'live' | 'paused' | 'expired';
-  tags: string[];
-  publishDate?: string;
-}
+import type { NewsArticle } from '../types';
 
 interface NewsCardProps {
   article: NewsArticle;
@@ -99,6 +79,9 @@ export function NewsCard({
         borderRadius: '8px'
       }}
       onClick={handleCardClick}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(); } }}
+      role="button"
+      tabIndex={0}
     >
       {/* New article indicator dot - top left corner - only for pending articles */}
       {isNew && !showCheckbox && article.status === 'pending' && (

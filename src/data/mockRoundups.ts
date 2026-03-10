@@ -35,7 +35,7 @@ export const mockRoundups: NewsRoundup[] = [
     type: 'breaking',
     createdAt: '2024-12-23T08:30:00Z',
     updatedAt: '2024-12-23T08:30:00Z',
-    articleIds: ['sports-live-1', 'health-live-1', 'entertainment-live-1', 'business-live-1', 'world-live-1', 'national-live-1']
+    articleIds: ['sports-live-1', 'health-live-1', 'entertainment-live-1', 'business-live-1', 'world-live-1', 'tech-live-1']
   },
   {
     id: 'roundup-live-2',
@@ -53,7 +53,7 @@ export const mockRoundups: NewsRoundup[] = [
     type: 'trending',
     createdAt: '2024-12-23T10:15:00Z',
     updatedAt: '2024-12-23T10:15:00Z',
-    articleIds: ['sports-live-2', 'health-live-2', 'entertainment-live-2', 'business-live-3', 'world-live-2', 'national-live-2', 'sports-live-3']
+    articleIds: ['sports-live-2', 'health-live-2', 'entertainment-live-2', 'business-live-3', 'world-live-2', 'tech-live-2', 'sports-live-3']
   },
   {
     id: 'roundup-live-3',
@@ -71,7 +71,7 @@ export const mockRoundups: NewsRoundup[] = [
     type: 'weekly',
     createdAt: '2024-12-23T12:45:00Z',
     updatedAt: '2024-12-23T12:45:00Z',
-    articleIds: ['sports-live-4', 'health-live-3', 'entertainment-live-3', 'business-live-2', 'world-live-4', 'national-live-3', 'health-live-4', 'world-live-3']
+    articleIds: ['sports-live-4', 'health-live-3', 'entertainment-live-3', 'business-live-2', 'world-live-4', 'tech-live-3', 'health-live-4', 'world-live-3']
   },
   {
     id: 'roundup-live-4',
@@ -89,7 +89,7 @@ export const mockRoundups: NewsRoundup[] = [
     type: 'daily',
     createdAt: '2024-12-23T14:20:00Z',
     updatedAt: '2024-12-23T14:20:00Z',
-    articleIds: ['sports-live-5', 'health-live-5', 'entertainment-live-4', 'business-live-4', 'world-live-5', 'national-live-4']
+    articleIds: ['sports-live-5', 'health-live-5', 'entertainment-live-4', 'business-live-4', 'world-live-5', 'tech-live-4']
   },
   {
     id: 'roundup-live-5',
@@ -107,7 +107,7 @@ export const mockRoundups: NewsRoundup[] = [
     type: 'breaking',
     createdAt: '2024-12-23T16:00:00Z',
     updatedAt: '2024-12-23T16:00:00Z',
-    articleIds: ['sports-live-6', 'health-live-6', 'entertainment-live-5', 'business-live-5', 'world-live-6', 'national-live-5', 'entertainment-live-6', 'business-live-6']
+    articleIds: ['sports-live-6', 'health-live-6', 'entertainment-live-5', 'business-live-5', 'world-live-6', 'tech-live-5', 'entertainment-live-6', 'business-live-6']
   },
 
   // Paused Status (5 round-ups, each with 5-8 published articles)
@@ -127,7 +127,7 @@ export const mockRoundups: NewsRoundup[] = [
     type: 'weekly',
     createdAt: '2024-12-22T09:00:00Z',
     updatedAt: '2024-12-22T11:30:00Z',
-    articleIds: ['sports-live-1', 'health-live-1', 'entertainment-live-1', 'business-live-1', 'world-live-1', 'sports-paused-1']
+    articleIds: ['sports-live-1', 'health-live-1', 'entertainment-live-1', 'business-live-1', 'world-live-1', 'sports-live-7']
   },
   {
     id: 'roundup-paused-2',
@@ -145,7 +145,7 @@ export const mockRoundups: NewsRoundup[] = [
     type: 'breaking',
     createdAt: '2024-12-22T11:30:00Z',
     updatedAt: '2024-12-22T13:45:00Z',
-    articleIds: ['sports-live-2', 'health-live-2', 'entertainment-live-2', 'business-live-2', 'world-live-2', 'national-live-1', 'national-live-2']
+    articleIds: ['sports-live-2', 'health-live-2', 'entertainment-live-2', 'business-live-2', 'world-live-2', 'tech-live-1', 'tech-live-2']
   },
   {
     id: 'roundup-paused-3',
@@ -163,7 +163,7 @@ export const mockRoundups: NewsRoundup[] = [
     type: 'daily',
     createdAt: '2024-12-22T15:15:00Z',
     updatedAt: '2024-12-22T17:20:00Z',
-    articleIds: ['sports-live-3', 'health-live-3', 'entertainment-live-3', 'business-live-3', 'world-live-3', 'national-live-3']
+    articleIds: ['sports-live-3', 'health-live-3', 'entertainment-live-3', 'business-live-3', 'world-live-3', 'tech-live-3']
   },
   {
     id: 'roundup-paused-4',
@@ -181,7 +181,7 @@ export const mockRoundups: NewsRoundup[] = [
     type: 'regional',
     createdAt: '2024-12-22T18:30:00Z',
     updatedAt: '2024-12-22T18:30:00Z',
-    articleIds: ['sports-live-4', 'health-live-4', 'entertainment-live-4', 'business-live-4', 'world-live-4', 'national-live-4', 'sports-live-5']
+    articleIds: ['sports-live-4', 'health-live-4', 'entertainment-live-4', 'business-live-4', 'world-live-4', 'tech-live-4', 'sports-live-5']
   },
   {
     id: 'roundup-paused-5',
@@ -199,7 +199,7 @@ export const mockRoundups: NewsRoundup[] = [
     type: 'weekly',
     createdAt: '2024-12-22T20:00:00Z',
     updatedAt: '2024-12-22T20:00:00Z',
-    articleIds: ['sports-live-6', 'health-live-5', 'entertainment-live-5', 'business-live-5', 'world-live-5', 'national-live-5', 'health-live-6', 'entertainment-live-6']
+    articleIds: ['sports-live-6', 'health-live-5', 'entertainment-live-5', 'business-live-5', 'world-live-5', 'tech-live-5', 'health-live-6', 'entertainment-live-6']
   },
 
   // Expired Status (5 round-ups, each with 5-8 published articles from older dates)
@@ -219,7 +219,7 @@ export const mockRoundups: NewsRoundup[] = [
     type: 'weekly',
     createdAt: '2024-12-20T20:00:00Z',
     updatedAt: '2024-12-20T20:00:00Z',
-    articleIds: ['sports-live-1', 'health-live-1', 'entertainment-live-1', 'business-live-1', 'world-live-1', 'sports-expired-1']
+    articleIds: ['sports-live-1', 'health-live-1', 'entertainment-live-1', 'business-live-1', 'world-live-1', 'sports-live-8']
   },
   {
     id: 'roundup-expired-2',
@@ -237,7 +237,7 @@ export const mockRoundups: NewsRoundup[] = [
     type: 'breaking',
     createdAt: '2024-12-19T07:45:00Z',
     updatedAt: '2024-12-19T07:45:00Z',
-    articleIds: ['sports-live-2', 'health-live-2', 'entertainment-live-2', 'business-live-2', 'world-live-2', 'national-live-1', 'sports-live-3']
+    articleIds: ['sports-live-2', 'health-live-2', 'entertainment-live-2', 'business-live-2', 'world-live-2', 'tech-live-1', 'sports-live-3']
   },
   {
     id: 'roundup-expired-3',
@@ -255,7 +255,7 @@ export const mockRoundups: NewsRoundup[] = [
     type: 'daily',
     createdAt: '2024-12-18T13:20:00Z',
     updatedAt: '2024-12-18T13:20:00Z',
-    articleIds: ['sports-live-4', 'health-live-3', 'entertainment-live-3', 'business-live-3', 'world-live-3', 'national-live-2']
+    articleIds: ['sports-live-4', 'health-live-3', 'entertainment-live-3', 'business-live-3', 'world-live-3', 'tech-live-2']
   },
   {
     id: 'roundup-expired-4',
@@ -273,7 +273,7 @@ export const mockRoundups: NewsRoundup[] = [
     type: 'trending',
     createdAt: '2024-12-17T16:50:00Z',
     updatedAt: '2024-12-17T16:50:00Z',
-    articleIds: ['sports-live-5', 'health-live-4', 'entertainment-live-4', 'business-live-4', 'world-live-4', 'national-live-3', 'sports-live-6', 'health-live-5']
+    articleIds: ['sports-live-5', 'health-live-4', 'entertainment-live-4', 'business-live-4', 'world-live-4', 'tech-live-3', 'sports-live-6', 'health-live-5']
   },
   {
     id: 'roundup-expired-5',
@@ -291,7 +291,7 @@ export const mockRoundups: NewsRoundup[] = [
     type: 'breaking',
     createdAt: '2024-12-16T10:30:00Z',
     updatedAt: '2024-12-16T10:30:00Z',
-    articleIds: ['sports-live-6', 'health-live-6', 'entertainment-live-5', 'business-live-5', 'world-live-5', 'national-live-4']
+    articleIds: ['sports-live-6', 'health-live-6', 'entertainment-live-5', 'business-live-5', 'world-live-5', 'tech-live-4']
   },
 
   // Archived Status (2 round-ups, each with 2 published articles)
@@ -329,6 +329,6 @@ export const mockRoundups: NewsRoundup[] = [
     type: 'breaking',
     createdAt: '2024-12-14T14:15:00Z',
     updatedAt: '2024-12-14T14:15:00Z',
-    articleIds: ['entertainment-archive-1', 'world-live-3']
+    articleIds: ['entertainment-live-7', 'world-live-3']
   }
 ];

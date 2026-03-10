@@ -38,7 +38,7 @@ export const mockNewsStories: NewsStory[] = [
     type: 'Breaking News Series',
     createdAt: '2024-08-18T09:30:00Z',
     updatedAt: '2024-08-19T14:22:00Z',
-    articleIds: ['ukraine-war-4', 'ukraine-war-3', 'ukraine-war-2', 'ukraine-war-1', 'article-1', 'article-3', 'article-8', 'article-12'],
+    articleIds: ['world-live-1', 'world-live-2', 'world-live-3', 'world-live-4', 'world-live-5', 'world-live-6', 'world-live-7', 'world-live-8'],
     lastEventDate: '2024-08-19T14:22:00Z'
   },
   {
@@ -58,7 +58,7 @@ export const mockNewsStories: NewsStory[] = [
     type: 'Science Updates',
     createdAt: '2024-08-17T11:15:00Z',
     updatedAt: '2024-08-19T10:45:00Z',
-    articleIds: ['isro-space-1', 'isro-space-3', 'isro-space-2', 'article-15', 'article-22'],
+    articleIds: ['tech-live-1', 'tech-live-2', 'tech-live-3', 'tech-live-4', 'tech-live-5'],
     lastEventDate: '2024-08-19T10:45:00Z'
   },
   {
@@ -78,7 +78,7 @@ export const mockNewsStories: NewsStory[] = [
     type: 'Conference Coverage',
     createdAt: '2024-08-16T14:45:00Z',
     updatedAt: '2024-08-18T16:30:00Z',
-    articleIds: ['climate-summit-2', 'climate-summit-4', 'climate-summit-1', 'climate-summit-3', 'article-28'],
+    articleIds: ['health-live-1', 'health-live-2', 'health-live-3', 'health-live-4', 'health-live-5'],
     lastEventDate: '2024-08-18T16:30:00Z'
   },
   {
@@ -98,7 +98,7 @@ export const mockNewsStories: NewsStory[] = [
     type: 'Sports Tournament',
     createdAt: '2024-08-15T19:30:00Z',
     updatedAt: '2024-08-19T08:15:00Z',
-    articleIds: ['ipl-2024-1', 'ipl-2024-2', 'article-5', 'article-11', 'article-18'],
+    articleIds: ['sports-live-1', 'sports-live-2', 'sports-live-3', 'sports-live-4', 'sports-live-5'],
     lastEventDate: '2024-08-19T08:15:00Z'
   },
   {
@@ -118,7 +118,7 @@ export const mockNewsStories: NewsStory[] = [
     type: 'Weather Updates',
     createdAt: '2024-08-14T06:00:00Z',
     updatedAt: '2024-08-19T12:30:00Z',
-    articleIds: ['monsoon-2024-2', 'monsoon-2024-1', 'monsoon-2024-3', 'article-7', 'article-14'],
+    articleIds: ['entertainment-live-1', 'entertainment-live-2', 'entertainment-live-3', 'entertainment-live-4', 'entertainment-live-5'],
     lastEventDate: '2024-08-19T12:30:00Z'
   },
   {
@@ -138,7 +138,7 @@ export const mockNewsStories: NewsStory[] = [
     type: 'Political Coverage',
     createdAt: '2024-08-13T22:00:00Z',
     updatedAt: '2024-08-15T12:00:00Z',
-    articleIds: ['us-election-3', 'us-election-1', 'us-election-2', 'article-9', 'article-16'],
+    articleIds: ['business-live-1', 'business-live-2', 'business-live-3', 'business-live-4', 'business-live-5'],
     lastEventDate: '2024-08-15T11:45:00Z'
   }
 ];

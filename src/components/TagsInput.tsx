@@ -56,7 +56,7 @@ export function TagsInput({
   }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.target.value;
+    const newValue = e.target.value.slice(0, 50);
     setInputValue(newValue);
     if (newValue && !isDropdownOpen) {
       setIsDropdownOpen(true);

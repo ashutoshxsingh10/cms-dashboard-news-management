@@ -31,9 +31,9 @@ interface SearchWithSuggestionsProps {
   placeholder?: string;
   activeTab: string;
   activeSubTab: string;
-  articles?: any[]; // Current articles data for generating realistic suggestions
-  roundups?: any[]; // Current roundups data for generating realistic suggestions
-  newsStories?: any[]; // Current news stories data for generating realistic suggestions
+  articles?: Array<{ source: string; tags: string[] }>;
+  roundups?: Array<{ type: string; tags: string[] }>;
+  newsStories?: Array<{ type: string; tags: string[] }>;
 }
 
 export function SearchWithSuggestions({ 
@@ -226,7 +226,8 @@ export function SearchWithSuggestions({
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(e.target.value);
+    const sanitized = e.target.value.slice(0, 200);
+    onChange(sanitized);
     if (!isOpen) setIsOpen(true);
   };
 
