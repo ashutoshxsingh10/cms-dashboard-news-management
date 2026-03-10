@@ -34,27 +34,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-
-interface NewsArticle {
-  id: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  source: string;
-  sourceIcon: string;
-  ingestionTime: string;
-  contentType: 'article' | 'video';
-  safetyScore: number;
-  originalSafetyScore?: number;
-  newsType: string;
-  subType: string[];
-  imageUrl: string;
-  status: 'pending' | 'review' | 'rejected' | 'published';
-  publishStatus?: 'live' | 'paused' | 'expired';
-  tags: string[];
-  publishDate?: string;
-  isBreaking?: boolean;
-}
+import type { NewsArticle } from '../types';
+import { MAX_BULK_SELECTION } from '../constants';
 
 interface CMSContentProps {
   activeTab: string;
@@ -300,8 +281,8 @@ export function CMSContent({
           <div className="px-6 pt-6">
             {/* Header Title */}
             <div className="mb-2">
-              <h1 style={{ fontSize: '20pt' }}>{activeTab === 'news-stories' ? 'News Stories' : 'News Round Up'}</h1>
-              <p className="text-muted-foreground" style={{ fontSize: '8pt' }}>
+              <h1 className="text-[20pt]">{activeTab === 'news-stories' ? 'News Stories' : 'News Round Up'}</h1>
+              <p className="text-muted-foreground text-[8pt]">
                 {activeTab === 'news-stories' 
                   ? 'Create and manage ongoing news stories from here.' 
                   : 'Compile and curate news roundups from here.'
@@ -380,7 +361,7 @@ export function CMSContent({
               {/* Create Button */}
               <div className="w-80 flex justify-end">
                 <Button 
-                  onClick={activeTab === 'news-stories' ? onCreateStoryClick : onCreateRoundupClick}
+                  onClick={() => activeTab === 'news-stories' ? onCreateStoryClick?.() : onCreateRoundupClick?.()}
                   className="bg-primary text-primary-foreground hover:bg-primary/90"
                 >
                   {activeTab === 'news-stories' ? 'Create News Story' : 'Create Round-up'}
@@ -435,7 +416,7 @@ export function CMSContent({
               {/* Selection Counter */}
               {(isBulkMode || isSuggestMode) && selectedArticleIds.length > 0 && (
                 <div className="text-sm text-muted-foreground">
-                  {selectedArticleIds.length}/5 articles selected
+                  {selectedArticleIds.length}/{MAX_BULK_SELECTION} articles selected
                 </div>
               )}
             </div>
@@ -496,7 +477,7 @@ export function CMSContent({
                 return matches;
               }).length === 0 && (
                 <div className="text-center py-12 text-muted-foreground">
-                  <p>No news stories found matching your criteria</p>
+                  <p>{searchTerm ? `No news stories found for "${searchTerm}"` : 'No news stories in this category yet'}</p>
                 </div>
               )}
             </div>
@@ -562,7 +543,7 @@ export function CMSContent({
                 return matches;
               }).length === 0 && (
                 <div className="text-center py-12 text-muted-foreground">
-                  <p>No roundups found matching your criteria</p>
+                  <p>{searchTerm ? `No roundups found for "${searchTerm}"` : 'No roundups in this category yet'}</p>
                 </div>
               )}
             </div>
@@ -632,7 +613,7 @@ export function CMSContent({
               {/* No articles message */}
               {filteredAndSortedArticles.length === 0 && (
                 <div className="text-center py-8 text-muted-foreground">
-                  No articles found for the selected date
+                  {searchTerm ? `No articles found for "${searchTerm}"` : 'No articles found for the selected date'}
                 </div>
               )}
             </div>

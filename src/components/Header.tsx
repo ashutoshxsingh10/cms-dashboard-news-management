@@ -24,6 +24,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
+import type { NewsArticle } from '../types';
+import { MAX_BULK_SELECTION } from '../constants';
 
 interface HeaderProps {
   searchTerm: string;
@@ -48,7 +50,7 @@ interface HeaderProps {
   onSuggestBulkPublishing: () => void;
   onQuickFiltersChange: (filters: string[]) => void;
   activeTab: string;
-  articles?: any[]; // Articles data for search suggestions
+  articles?: NewsArticle[];
   showBulkOptions?: boolean;
   selectedCount?: number;
   totalCount?: number;
@@ -112,8 +114,8 @@ export function Header({
       <div className="px-6 pt-6">
         {/* Header Title */}
         <div className="mb-2">
-          <h1 style={{ fontSize: '20pt' }}>News Publishing</h1>
-          <p className="text-muted-foreground" style={{ fontSize: '8pt' }}>Edit, Curate, moderate and Publish news content from here.</p>
+          <h1 className="text-[20pt]">News Publishing</h1>
+          <p className="text-muted-foreground text-[8pt]">Edit, Curate, moderate and Publish news content from here.</p>
         </div>
 
         {/* Sub-tabs and Search in same row */}
@@ -281,7 +283,7 @@ export function Header({
           {/* Selection Counter */}
           {showBulkOptions && (isBulkMode || isSuggestMode) && selectedArticleIds.length > 0 && (
             <div className="text-sm text-muted-foreground">
-              {selectedArticleIds.length}/5 articles selected
+              {selectedArticleIds.length}/{MAX_BULK_SELECTION} articles selected
             </div>
           )}
         </div>

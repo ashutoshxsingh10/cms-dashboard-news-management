@@ -7,27 +7,7 @@ import { RoundupActionModal } from './RoundupActionModal';
 import { ScrollArea } from './ui/scroll-area';
 
 import { NewsRoundup } from '../data/mockRoundups';
-
-interface NewsArticle {
-  id: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  source: string;
-  sourceIcon: string;
-  ingestionTime: string;
-  contentType: 'article' | 'video';
-  safetyScore: number;
-  originalSafetyScore?: number;
-  newsType: string;
-  subType: string[];
-  imageUrl: string;
-  status: 'pending' | 'review' | 'rejected' | 'published';
-  publishStatus?: 'live' | 'paused' | 'expired';
-  tags: string[];
-  publishDate?: string;
-  isBreaking?: boolean;
-}
+import type { NewsArticle } from '../types';
 
 interface NewsRoundupDetailProps {
   roundup: NewsRoundup;

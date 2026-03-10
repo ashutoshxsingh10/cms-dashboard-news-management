@@ -17,27 +17,7 @@ import { PausePublishingConfirmModal } from './PausePublishingConfirmModal';
 import { EndPublishingConfirmModal } from './EndPublishingConfirmModal';
 import { toast } from "sonner@2.0.3";
 import { ImageCropSection } from './ImageCropSection';
-
-interface NewsArticle {
-  id: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  source: string;
-  sourceIcon: string;
-  ingestionTime: string;
-  contentType: 'article' | 'video';
-  safetyScore: number;
-  originalSafetyScore?: number;
-  newsType: string;
-  subType: string[];
-  imageUrl: string;
-  status: 'pending' | 'review' | 'rejected' | 'published';
-  publishStatus?: 'live' | 'paused' | 'expired';
-  tags: string[];
-  publishDate?: string;
-  isBreaking?: boolean;
-}
+import type { NewsArticle } from '../types';
 
 interface NewsDetailProps {
   article: NewsArticle | null;
@@ -314,7 +294,7 @@ export function NewsDetail({
     setIsPublishModalOpen(true);
   };
 
-  const handlePublishConfirm = (settings: any) => {
+  const handlePublishConfirm = (_settings: Record<string, unknown>) => {
     if (isBulkMode && selectedArticleIds.length > 0) {
       onBulkStatusChange(selectedArticleIds, 'published');
       toast.success(`Successfully published ${selectedArticleIds.length} article${selectedArticleIds.length > 1 ? 's' : ''}!`, {
@@ -731,7 +711,7 @@ export function NewsDetail({
                 className="p-4 rounded-2xl" 
                 style={{
                   height: '96px',
-                  backgroundColor: isBreaking ? '#F4F5FC' : '#F4F5FC',
+                  backgroundColor: '#F4F5FC',
                   border: isBreaking ? '1px solid #873DFF' : 'none',
                   background: isBreaking 
                     ? 'linear-gradient(90deg, rgba(135, 61, 255, 0.10) 0%, rgba(255, 24, 24, 0.10) 100%), #F4F5FC'
@@ -762,6 +742,7 @@ export function NewsDetail({
                     variant="ghost"
                     className="text-muted-foreground hover:text-foreground p-2"
                     onClick={handleTitleEditClick}
+                    aria-label="Edit title"
                   >
                     <Edit className="h-4 w-4" />
                   </Button>
@@ -901,10 +882,11 @@ export function NewsDetail({
                       placeholder="https://..."
                       disabled={isEditingRestricted}
                     />
-                    <Button 
-                      size="sm" 
+                    <Button
+                      size="sm"
                       variant="outline"
                       disabled={isEditingRestricted}
+                      aria-label="Open CTA URL"
                     >
                       <ExternalLink className="h-4 w-4" />
                     </Button>

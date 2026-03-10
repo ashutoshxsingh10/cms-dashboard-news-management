@@ -14,18 +14,23 @@ import { StoryArchiveModal } from './components/StoryArchiveModal';
 import { BulkRejectModal } from './components/BulkRejectModal';
 import { BulkAddToReviewModal } from './components/BulkAddToReviewModal';
 import { DisclaimerModal } from './components/DisclaimerModal';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import { Toaster } from './components/ui/sonner';
 import { mockArticles } from './data/mockArticles';
 import { mockRoundups } from './data/mockRoundups';
 import { mockNewsStories } from './data/mockNewsStories';
 import { toast } from 'sonner@2.0.3';
+import type { NewsArticle } from './types';
+import type { NewsRoundup } from './data/mockRoundups';
+import type { NewsStory as NewsStoryType } from './data/mockNewsStories';
+import { MAX_BULK_SELECTION } from './constants';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('news-publishing');
   const [activeSubTab, setActiveSubTab] = useState('pending');
-  const [selectedArticle, setSelectedArticle] = useState<typeof mockArticles[0] | null>(null);
-  const [selectedRoundup, setSelectedRoundup] = useState<typeof mockRoundups[0] | null>(null);
-  const [selectedStory, setSelectedStory] = useState<typeof mockNewsStories[0] | null>(null);
+  const [selectedArticle, setSelectedArticle] = useState<NewsArticle | null>(null);
+  const [selectedRoundup, setSelectedRoundup] = useState<NewsRoundup | null>(null);
+  const [selectedStory, setSelectedStory] = useState<NewsStoryType | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterBy, setFilterBy] = useState('all');
   const [sortBy, setSortBy] = useState('ingestion-desc');
@@ -141,14 +146,14 @@ export default function App() {
   }, [activeTab, selectedRoundup, selectedArticle, articles, isRoundupCreationMode, isRoundupPrePublishMode, isStoryCreationMode, isStoryPrePublishMode]);
 
   // Handle article selection and mark as viewed
-  const handleArticleSelect = (article: typeof mockArticles[0]) => {
+  const handleArticleSelect = (article: NewsArticle) => {
     setSelectedArticle(article);
     // Mark article as viewed when selected
     setViewedArticleIds(prev => new Set([...prev, article.id]));
   };
 
   // Handle article updates
-  const handleArticleUpdate = (articleId: string, updates: Partial<typeof mockArticles[0]>) => {
+  const handleArticleUpdate = (articleId: string, updates: Partial<NewsArticle>) => {
     setArticles(prev => prev.map(article => 
       article.id === articleId ? { ...article, ...updates } : article
     ));
@@ -159,7 +164,7 @@ export default function App() {
   };
 
   // Handle status changes
-  const handleStatusChange = (articleId: string, status: typeof mockArticles[0]['status']) => {
+  const handleStatusChange = (articleId: string, status: NewsArticle['status']) => {
     setArticles(prev => prev.map(article => 
       article.id === articleId ? { ...article, status } : article
     ));
@@ -170,7 +175,7 @@ export default function App() {
   };
 
   // Handle bulk status changes with confirmation
-  const handleBulkStatusChange = (articleIds: string[], status: typeof mockArticles[0]['status']) => {
+  const handleBulkStatusChange = (articleIds: string[], status: NewsArticle['status']) => {
     if (articleIds.length === 0) {
       toast.warning("No articles selected", {
         description: "Please select articles before performing bulk actions.",
@@ -190,7 +195,7 @@ export default function App() {
   };
 
   // Perform the actual bulk status change
-  const performBulkStatusChange = (articleIds: string[], status: typeof mockArticles[0]['status']) => {
+  const performBulkStatusChange = (articleIds: string[], status: NewsArticle['status']) => {
     if (articleIds.length === 0) {
       toast.warning("No articles selected", {
         description: "Please select articles before performing bulk actions.",
@@ -252,10 +257,9 @@ export default function App() {
     
     // Select between 3-5 articles (prefer 5, but ensure minimum 3)
     const maxSelectable = Math.min(5, sortedArticles.length);
-    const minSelectable = Math.min(3, sortedArticles.length);
-    const selectedCount = Math.max(minSelectable, maxSelectable);
-    
-    if (selectedCount < 3) {
+    const selectedCount = maxSelectable;
+
+    if (maxSelectable < 3) {
       toast.warning("Insufficient articles for bulk suggestion", {
         description: `Need at least 3 articles in current view for bulk suggestion.`,
         duration: 4000,
@@ -286,7 +290,7 @@ export default function App() {
     }
 
     if (isSelected) {
-      if (selectedArticleIds.length >= 5) {
+      if (selectedArticleIds.length >= MAX_BULK_SELECTION) {
         toast.warning("Selection limit reached", {
           description: "You can select up to 5 articles at a time.",
           duration: 3000,
@@ -333,11 +337,8 @@ export default function App() {
     
     // Clear any existing selections first
     setSelectedArticleIds([]);
-    
-    // Use setTimeout to ensure state updates are applied before calling suggest function
-    setTimeout(() => {
-      handleSuggestBulkPublishing();
-    }, 0);
+
+    handleSuggestBulkPublishing();
   };
 
   // Handle tab change with appropriate sub-tab reset
@@ -424,7 +425,7 @@ export default function App() {
   };
 
   // Handle round-up selection for detail view
-  const handleRoundupSelect = (roundup: typeof mockRoundups[0]) => {
+  const handleRoundupSelect = (roundup: NewsRoundup) => {
     setSelectedRoundup(roundup);
     setSelectedArticle(null); // Clear article selection when entering roundup detail
     
@@ -457,7 +458,7 @@ export default function App() {
   };
 
   // Handle round-up status changes
-  const handleRoundupStatusChange = (roundupId: string, status: typeof mockRoundups[0]['status']) => {
+  const handleRoundupStatusChange = (roundupId: string, status: NewsRoundup['status']) => {
     setRoundups(prev => prev.map(roundup => 
       roundup.id === roundupId ? { ...roundup, status } : roundup
     ));
@@ -468,7 +469,7 @@ export default function App() {
   };
 
   // Handle news story status changes
-  const handleStoryStatusChange = (storyId: string, status: typeof mockNewsStories[0]['status']) => {
+  const handleStoryStatusChange = (storyId: string, status: NewsStoryType['status']) => {
     setNewsStories(prev => prev.map(story => 
       story.id === storyId ? { ...story, status } : story
     ));
@@ -479,7 +480,7 @@ export default function App() {
   };
 
   // Handle story selection for detail view
-  const handleStorySelect = (story: typeof mockNewsStories[0]) => {
+  const handleStorySelect = (story: NewsStoryType) => {
     setSelectedStory(story);
     setSelectedArticle(null); // Clear article selection when entering story detail
   };
@@ -723,7 +724,17 @@ export default function App() {
   const handleStoryPublishConfirm = (settings: StoryPublishSettings) => {
     if (!pendingStoryData) return;
 
-    const publishTime = settings.startTimeMode === 'now' ? new Date() : new Date(`${settings.customDate?.toISOString().split('T')[0]}T${settings.customTime}`);
+    let publishTime: Date;
+    if (settings.startTimeMode === 'now') {
+      publishTime = new Date();
+    } else {
+      try {
+        publishTime = new Date(`${settings.customDate?.toISOString().split('T')[0]}T${settings.customTime}`);
+        if (isNaN(publishTime.getTime())) publishTime = new Date();
+      } catch {
+        publishTime = new Date();
+      }
+    }
     const expireTime = new Date(publishTime.getTime() + settings.durationValue * (settings.durationType === 'days' ? 24 : 1) * 60 * 60 * 1000);
 
     // Create new story
@@ -873,7 +884,17 @@ export default function App() {
   const handlePublishConfirm = (settings: RoundupPublishSettings) => {
     if (!pendingRoundupData) return;
 
-    const publishTime = settings.startTimeMode === 'now' ? new Date() : new Date(`${settings.customDate?.toISOString().split('T')[0]}T${settings.customTime}`);
+    let publishTime: Date;
+    if (settings.startTimeMode === 'now') {
+      publishTime = new Date();
+    } else {
+      try {
+        publishTime = new Date(`${settings.customDate?.toISOString().split('T')[0]}T${settings.customTime}`);
+        if (isNaN(publishTime.getTime())) publishTime = new Date();
+      } catch {
+        publishTime = new Date();
+      }
+    }
     const expireTime = new Date(publishTime.getTime() + settings.durationValue * (settings.durationType === 'days' ? 24 : 1) * 60 * 60 * 1000);
 
     // Create new roundup
@@ -1092,6 +1113,7 @@ export default function App() {
   };
 
   return (
+    <ErrorBoundary>
     <div className="h-screen" style={{ backgroundColor: '#F9FBFC' }}>
       {/* Main container */}
       <div className="h-full flex">
@@ -1207,5 +1229,6 @@ export default function App() {
         richColors={true}
       />
     </div>
+    </ErrorBoundary>
   );
 }
