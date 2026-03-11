@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect, useMemo } from 'react';
 import { Badge } from "./ui/badge";
 import { Input } from "./ui/input";
-import { X, ChevronDown } from "lucide-react";
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Cancel01Icon, ArrowDown01Icon } from '@hugeicons/core-free-icons';
 
 interface TagsInputProps {
   tags: string[];
@@ -151,7 +152,7 @@ export function TagsInput({
                   }
                 }}
               >
-                <X className="h-3 w-3" />
+                <HugeiconsIcon icon={Cancel01Icon} className="h-3 w-3" />
               </span>
             )}
           </Badge>
@@ -172,7 +173,7 @@ export function TagsInput({
         </div>
 
         {/* Dropdown arrow */}
-        <ChevronDown className="h-4 w-4 opacity-50 flex-shrink-0" />
+        <HugeiconsIcon icon={ArrowDown01Icon} className="h-4 w-4 opacity-50 flex-shrink-0" />
       </div>
 
       {/* Dropdown */}

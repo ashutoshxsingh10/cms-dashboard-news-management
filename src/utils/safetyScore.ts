@@ -1,8 +1,8 @@
-import { CheckCircle, Shield, AlertTriangle } from 'lucide-react';
+import { CheckmarkCircle02Icon, Shield01Icon, Alert02Icon } from '@hugeicons/core-free-icons';
 import type { SafetyTierInfo } from '../types';
 
 export interface SafetyTierInfoWithIcon extends SafetyTierInfo {
-  icon: typeof CheckCircle;
+  icon: typeof CheckmarkCircle02Icon;
 }
 
 export function getSafetyTierInfo(tier: number): SafetyTierInfoWithIcon {
@@ -13,7 +13,7 @@ export function getSafetyTierInfo(tier: number): SafetyTierInfoWithIcon {
         textColor: 'text-green-700',
         borderColor: '#16a34a',
         backgroundColor: 'rgba(220, 252, 231, 0.5)',
-        icon: CheckCircle,
+        icon: CheckmarkCircle02Icon,
       };
     case 4:
       return {
@@ -21,7 +21,7 @@ export function getSafetyTierInfo(tier: number): SafetyTierInfoWithIcon {
         textColor: 'text-green-600',
         borderColor: '#059669',
         backgroundColor: 'rgba(220, 252, 231, 0.3)',
-        icon: CheckCircle,
+        icon: CheckmarkCircle02Icon,
       };
     case 3:
       return {
@@ -29,7 +29,7 @@ export function getSafetyTierInfo(tier: number): SafetyTierInfoWithIcon {
         textColor: 'text-amber-700',
         borderColor: '#d97706',
         backgroundColor: 'rgba(254, 243, 199, 0.5)',
-        icon: Shield,
+        icon: Shield01Icon,
       };
     case 2:
       return {
@@ -37,7 +37,7 @@ export function getSafetyTierInfo(tier: number): SafetyTierInfoWithIcon {
         textColor: 'text-orange-700',
         borderColor: '#ea580c',
         backgroundColor: 'rgba(254, 215, 170, 0.5)',
-        icon: AlertTriangle,
+        icon: Alert02Icon,
       };
     case 1:
     default:
@@ -46,7 +46,7 @@ export function getSafetyTierInfo(tier: number): SafetyTierInfoWithIcon {
         textColor: 'text-red-700',
         borderColor: '#dc2626',
         backgroundColor: 'rgba(254, 202, 202, 0.5)',
-        icon: AlertTriangle,
+        icon: Alert02Icon,
       };
   }
 }

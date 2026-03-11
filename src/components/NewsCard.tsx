@@ -2,7 +2,8 @@ import { Badge } from "./ui/badge";
 import { Checkbox } from "./ui/checkbox";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { SafetyScoreTag } from "./SafetyScoreTag";
-import { Clock, FileText, Video } from "lucide-react";
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Clock01Icon, File01Icon, Video01Icon } from '@hugeicons/core-free-icons';
 import type { NewsArticle } from '../types';
 
 interface NewsCardProps {
@@ -42,7 +43,7 @@ export function NewsCard({
 }: NewsCardProps) {
 
 
-  const ContentTypeIcon = article.contentType === 'video' ? Video : FileText;
+  const contentTypeIcon = article.contentType === 'video' ? Video01Icon : File01Icon;
 
   // Format exact timestamp - time only
   const formatExactTime = (isoString: string) => {
@@ -119,7 +120,7 @@ export function NewsCard({
               </div>
 
               {/* Content Type Icon - always visible */}
-              <ContentTypeIcon className="h-4 w-4 flex-shrink-0" />
+              <HugeiconsIcon icon={contentTypeIcon} className="h-4 w-4 flex-shrink-0" />
 
               {/* Category Tag - always visible */}
               <Badge variant="secondary" className="text-xs px-2 py-0.5 flex-shrink-0 whitespace-nowrap">
@@ -156,7 +157,7 @@ export function NewsCard({
             <div className="flex items-center gap-2 flex-shrink-0">
               {/* Ingestion Time */}
               <div className="flex items-center gap-1">
-                <Clock className="h-3 w-3" />
+                <HugeiconsIcon icon={Clock01Icon} className="h-3 w-3" />
                 <span className="whitespace-nowrap">{formatExactTime(article.ingestionTime)}</span>
               </div>
 

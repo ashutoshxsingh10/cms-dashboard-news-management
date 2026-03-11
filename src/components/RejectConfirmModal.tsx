@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { AlertTriangle } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Alert02Icon } from '@hugeicons/core-free-icons';
 import { Button } from './ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './ui/dialog';
 import { Textarea } from './ui/textarea';
@@ -41,7 +42,7 @@ export function RejectConfirmModal({
             animate={{ scale: 1 }}
             transition={{ duration: 0.2 }}
           >
-            <AlertTriangle className="h-6 w-6 text-red-600" />
+            <HugeiconsIcon icon={Alert02Icon} className="h-6 w-6 text-red-600" />
           </motion.div>
           <DialogTitle className="text-lg">
             Reject Article?

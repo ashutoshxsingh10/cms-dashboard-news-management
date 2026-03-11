@@ -1,7 +1,8 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "./ui/dialog";
 import { Badge } from "./ui/badge";
 import { Separator } from "./ui/separator";
-import { FileText, Radio, Zap, Calendar, TrendingUp, Target } from "lucide-react";
+import { HugeiconsIcon } from '@hugeicons/react';
+import { File01Icon, Radio01Icon, FlashIcon, Calendar03Icon, AnalyticsUpIcon, Target01Icon } from '@hugeicons/core-free-icons';
 
 interface NewsPublisherStatsModalProps {
   isOpen: boolean;
@@ -99,7 +100,7 @@ export function NewsPublisherStatsModal({ isOpen, onClose, articles, roundups, n
         <DialogHeader>
           <DialogTitle className="flex items-center gap-3">
             <div className="p-2 bg-primary/10 rounded-lg">
-              <TrendingUp className="h-5 w-5 text-primary" />
+              <HugeiconsIcon icon={AnalyticsUpIcon} className="h-5 w-5 text-primary" />
             </div>
             Publisher Performance
           </DialogTitle>
@@ -112,7 +113,7 @@ export function NewsPublisherStatsModal({ isOpen, onClose, articles, roundups, n
           {/* Today's Performance */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Calendar className="h-4 w-4 text-muted-foreground" />
+              <HugeiconsIcon icon={Calendar03Icon} className="h-4 w-4 text-muted-foreground" />
               <h3 className="font-medium">Today's Activity</h3>
               <Badge variant="secondary" className="bg-green-50 text-green-700 border-green-200">
                 {todayStats.totalActions} total actions
@@ -122,7 +123,7 @@ export function NewsPublisherStatsModal({ isOpen, onClose, articles, roundups, n
             <div className="grid grid-cols-3 gap-4">
               <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
                 <div className="flex items-center gap-2 mb-2">
-                  <FileText className="h-4 w-4 text-blue-600" />
+                  <HugeiconsIcon icon={File01Icon} className="h-4 w-4 text-blue-600" />
                   <span className="text-sm font-medium text-blue-900">Articles</span>
                 </div>
                 <div className="text-2xl font-semibold text-blue-900">{todayStats.articlesPublished}</div>
@@ -131,7 +132,7 @@ export function NewsPublisherStatsModal({ isOpen, onClose, articles, roundups, n
               
               <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
                 <div className="flex items-center gap-2 mb-2">
-                  <Radio className="h-4 w-4 text-purple-600" />
+                  <HugeiconsIcon icon={Radio01Icon} className="h-4 w-4 text-purple-600" />
                   <span className="text-sm font-medium text-purple-900">Roundups</span>
                 </div>
                 <div className="text-2xl font-semibold text-purple-900">{todayStats.roundupsPublished}</div>
@@ -140,7 +141,7 @@ export function NewsPublisherStatsModal({ isOpen, onClose, articles, roundups, n
               
               <div className="p-4 bg-orange-50 rounded-lg border border-orange-200">
                 <div className="flex items-center gap-2 mb-2">
-                  <Zap className="h-4 w-4 text-orange-600" />
+                  <HugeiconsIcon icon={FlashIcon} className="h-4 w-4 text-orange-600" />
                   <span className="text-sm font-medium text-orange-900">Stories</span>
                 </div>
                 <div className="text-2xl font-semibold text-orange-900">{todayStats.storiesPublished}</div>
@@ -154,7 +155,7 @@ export function NewsPublisherStatsModal({ isOpen, onClose, articles, roundups, n
           {/* Historical Performance */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Target className="h-4 w-4 text-muted-foreground" />
+              <HugeiconsIcon icon={Target01Icon} className="h-4 w-4 text-muted-foreground" />
               <h3 className="font-medium">Historical Performance</h3>
             </div>
             
@@ -165,21 +166,21 @@ export function NewsPublisherStatsModal({ isOpen, onClose, articles, roundups, n
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-2">
-                      <FileText className="h-4 w-4 text-blue-600" />
+                      <HugeiconsIcon icon={File01Icon} className="h-4 w-4 text-blue-600" />
                       <span className="text-sm">Total Articles</span>
                     </div>
                     <span className="font-semibold">{historicalStats.totalArticlesPublished.toLocaleString()}</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-2">
-                      <Radio className="h-4 w-4 text-purple-600" />
+                      <HugeiconsIcon icon={Radio01Icon} className="h-4 w-4 text-purple-600" />
                       <span className="text-sm">Total Roundups</span>
                     </div>
                     <span className="font-semibold">{historicalStats.totalRoundupsPublished}</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-2">
-                      <Zap className="h-4 w-4 text-orange-600" />
+                      <HugeiconsIcon icon={FlashIcon} className="h-4 w-4 text-orange-600" />
                       <span className="text-sm">Total Stories</span>
                     </div>
                     <span className="font-semibold">{historicalStats.totalStoriesPublished}</span>
@@ -224,15 +225,15 @@ export function NewsPublisherStatsModal({ isOpen, onClose, articles, roundups, n
                     </div>
                     <div className="flex items-center gap-4 text-xs text-muted-foreground">
                       <span className="flex items-center gap-1">
-                        <FileText className="h-3 w-3" />
+                        <HugeiconsIcon icon={File01Icon} className="h-3 w-3" />
                         {day.articles}
                       </span>
                       <span className="flex items-center gap-1">
-                        <Radio className="h-3 w-3" />
+                        <HugeiconsIcon icon={Radio01Icon} className="h-3 w-3" />
                         {day.roundups}
                       </span>
                       <span className="flex items-center gap-1">
-                        <Zap className="h-3 w-3" />
+                        <HugeiconsIcon icon={FlashIcon} className="h-3 w-3" />
                         {day.stories}
                       </span>
                     </div>

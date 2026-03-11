@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { FileText, User, Bell, LogOut, BarChart3, Radio, Zap } from "lucide-react";
+import { HugeiconsIcon } from '@hugeicons/react';
+import { File01Icon, UserIcon, Notification03Icon, Logout01Icon, ChartBarLineIcon, Radio01Icon, FlashIcon } from '@hugeicons/core-free-icons';
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { Badge } from "./ui/badge";
 import { motion } from "motion/react";
@@ -36,14 +37,14 @@ export function Navigation({ activeTab, onTabChange, articles, roundups, newsSto
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false);
   
   const tabs = [
-    { id: "news-publishing", label: "News Publishing", icon: FileText, isLucide: true },
-    { id: "news-stories", label: "News Stories", icon: Zap, isLucide: true },
-    { id: "news-roundup", label: "News Round Up", icon: Radio, isLucide: true },
+    { id: "news-publishing", label: "News Publishing", icon: File01Icon },
+    { id: "news-stories", label: "News Stories", icon: FlashIcon },
+    { id: "news-roundup", label: "News Round Up", icon: Radio01Icon },
   ];
 
   const bottomActions = [
-    { id: "notifications", label: "Notifications", icon: Bell },
-    { id: "logout", label: "Log Out", icon: LogOut },
+    { id: "notifications", label: "Notifications", icon: Notification03Icon },
+    { id: "logout", label: "Log Out", icon: Logout01Icon },
   ];
 
   // Calculate today's publications
@@ -71,7 +72,7 @@ export function Navigation({ activeTab, onTabChange, articles, roundups, newsSto
       <div className="flex justify-center mb-6">
         <Avatar className="h-10 w-10 rounded-[20px]">
           <AvatarFallback className="rounded-[20px]">
-            <User className="h-6 w-6" />
+            <HugeiconsIcon icon={UserIcon} className="h-6 w-6" />
           </AvatarFallback>
         </Avatar>
       </div>
@@ -85,7 +86,7 @@ export function Navigation({ activeTab, onTabChange, articles, roundups, newsSto
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <BarChart3 className="h-5 w-5 text-foreground" />
+          <HugeiconsIcon icon={ChartBarLineIcon} className="h-5 w-5 text-foreground" />
           {/* Counter badge */}
           <motion.div
             initial={{ scale: 0 }}
@@ -105,7 +106,6 @@ export function Navigation({ activeTab, onTabChange, articles, roundups, newsSto
       <nav className="flex-1 flex flex-col items-center">
         <div className="flex flex-col gap-6">
           {tabs.map((tab) => {
-            const Icon = tab.icon;
             const isActive = activeTab === tab.id;
             
             return (
@@ -120,7 +120,7 @@ export function Navigation({ activeTab, onTabChange, articles, roundups, newsSto
                   onClick={() => onTabChange(tab.id)}
                   title={tab.label}
                 >
-                  <Icon className="text-foreground" style={{ width: '21.6px', height: '21.6px' }} />
+                  <HugeiconsIcon icon={tab.icon} className="text-foreground" style={{ width: '21.6px', height: '21.6px' }} />
                 </button>
                 
                 {/* Active State Bar - positioned 5px below icon container */}
@@ -138,15 +138,13 @@ export function Navigation({ activeTab, onTabChange, articles, roundups, newsSto
       {/* Bottom Actions */}
       <div className="flex flex-col gap-6 items-center">
         {bottomActions.map((action) => {
-          const Icon = action.icon;
-          
           return (
             <button
               key={action.id}
               className="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-[#EDEFF2]/50 transition-colors"
               title={action.label}
             >
-              <Icon className="h-6 w-6 text-foreground" />
+              <HugeiconsIcon icon={action.icon} className="h-6 w-6 text-foreground" />
             </button>
           );
         })}

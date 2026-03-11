@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Shield, ChevronDown } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Shield01Icon, ArrowDown01Icon } from '@hugeicons/core-free-icons';
 import { getSafetyTierInfo, getSafetyScorePadding } from '../utils/safetyScore';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { toast } from "sonner@2.0.3";
@@ -121,10 +122,10 @@ export function SafetyScoreDropdown({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <Shield className={iconSize} />
+        <HugeiconsIcon icon={Shield01Icon} className={iconSize} />
         <span className={`${textSize} font-medium`}>{displayContent}</span>
-        <ChevronDown 
-          className={`${chevronSize} transition-opacity ${isHovered ? 'opacity-70' : 'opacity-0'}`} 
+        <HugeiconsIcon icon={ArrowDown01Icon}
+          className={`${chevronSize} transition-opacity ${isHovered ? 'opacity-70' : 'opacity-0'}`}
         />
       </div>
     );
@@ -133,19 +134,19 @@ export function SafetyScoreDropdown({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <div 
+        <div
           className={`flex items-center gap-1 rounded-lg border ${tierInfo.textColor} ${padding} cursor-pointer hover:opacity-80 transition-opacity`}
-          style={{ 
+          style={{
             borderColor: tierInfo.borderColor,
             backgroundColor: tierInfo.backgroundColor
           }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <Shield className={iconSize} />
+          <HugeiconsIcon icon={Shield01Icon} className={iconSize} />
           <span className={`${textSize} font-medium`}>{displayContent}</span>
-          <ChevronDown 
-            className={`${chevronSize} transition-opacity ${isHovered ? 'opacity-70' : 'opacity-0'}`} 
+          <HugeiconsIcon icon={ArrowDown01Icon}
+            className={`${chevronSize} transition-opacity ${isHovered ? 'opacity-70' : 'opacity-0'}`}
           />
         </div>
       </DropdownMenuTrigger>

@@ -14,19 +14,8 @@ import { mockNewsStories, NewsStory } from '../data/mockNewsStories';
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
-import { 
-  Search, 
-  Filter, 
-  ArrowUpDown, 
-  Lightbulb,
-  CheckSquare,
-  Trophy,
-  Heart,
-  Clapperboard,
-  Briefcase,
-  Globe,
-  MapPin
-} from "lucide-react";
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Search01Icon, FilterIcon, ArrowUpDownIcon, BulbIcon, CheckmarkSquare02Icon, ChampionIcon, FavouriteIcon, Film01Icon, Briefcase01Icon, Globe02Icon, Location01Icon } from '@hugeicons/core-free-icons';
 import {
   Select,
   SelectContent,
@@ -381,7 +370,7 @@ export function CMSContent({
                 {/* Sort Dropdown */}
                 <Select value={sortBy} onValueChange={onSortChange}>
                   <SelectTrigger className="w-48">
-                    <ArrowUpDown className="h-4 w-4" />
+                    <HugeiconsIcon icon={ArrowUpDownIcon} className="h-4 w-4" />
                     <SelectValue placeholder="Sort by" />
                   </SelectTrigger>
                   <SelectContent>
@@ -397,7 +386,7 @@ export function CMSContent({
                 {/* Filter Dropdown */}
                 <Select value={filterBy} onValueChange={onFilterChange}>
                   <SelectTrigger className="w-40">
-                    <Filter className="h-4 w-4" />
+                    <HugeiconsIcon icon={FilterIcon} className="h-4 w-4" />
                     <SelectValue placeholder="Filter" />
                   </SelectTrigger>
                   <SelectContent>

@@ -10,7 +10,8 @@ import { Badge } from './ui/badge';
 import { Separator } from './ui/separator';
 import { Label } from './ui/label';
 import { RadioGroup, RadioGroupItem } from './ui/radio-group';
-import { CalendarIcon, Clock } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Calendar03Icon, Clock01Icon } from '@hugeicons/core-free-icons';
 import { format } from 'date-fns';
 
 interface PublishSettings {
@@ -237,7 +238,7 @@ export function PublishModal({
                         variant="outline"
                         className="w-full justify-start text-left font-normal"
                       >
-                        <CalendarIcon className="mr-2 h-4 w-4" />
+                        <HugeiconsIcon icon={Calendar03Icon} className="mr-2 h-4 w-4" />
                         {settings.customDate ? format(settings.customDate, "MMM dd") : "Pick date"}
                       </Button>
                     </PopoverTrigger>
@@ -255,7 +256,7 @@ export function PublishModal({
 
                 {/* Time Picker */}
                 <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-muted-foreground" />
+                  <HugeiconsIcon icon={Clock01Icon} className="h-4 w-4 text-muted-foreground" />
                   <Input
                     type="time"
                     value={settings.customTime}

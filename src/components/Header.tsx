@@ -4,19 +4,8 @@ import { Badge } from "./ui/badge";
 import { Separator } from "./ui/separator";
 import { Checkbox } from "./ui/checkbox";
 import { SearchWithSuggestions } from "./SearchWithSuggestions";
-import { 
-  Search, 
-  Filter, 
-  ArrowUpDown, 
-  Lightbulb,
-  CheckSquare,
-  Trophy,
-  Heart,
-  Clapperboard,
-  Briefcase,
-  Globe,
-  MapPin
-} from "lucide-react";
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Search01Icon, FilterIcon, ArrowUpDownIcon, BulbIcon, CheckmarkSquare02Icon, ChampionIcon, FavouriteIcon, Film01Icon, Briefcase01Icon, Globe02Icon, Location01Icon } from '@hugeicons/core-free-icons';
 import {
   Select,
   SelectContent,
@@ -87,12 +76,12 @@ export function Header({
   ];
 
   const quickFilterOptions = [
-    { id: 'sports', label: 'Sports', icon: Trophy },
-    { id: 'health', label: 'Health', icon: Heart },
-    { id: 'entertainment', label: 'Entertainment', icon: Clapperboard },
-    { id: 'business', label: 'Business', icon: Briefcase },
-    { id: 'world', label: 'World', icon: Globe },
-    { id: 'national', label: 'National', icon: MapPin },
+    { id: 'sports', label: 'Sports', icon: ChampionIcon },
+    { id: 'health', label: 'Health', icon: FavouriteIcon },
+    { id: 'entertainment', label: 'Entertainment', icon: Film01Icon },
+    { id: 'business', label: 'Business', icon: Briefcase01Icon },
+    { id: 'world', label: 'World', icon: Globe02Icon },
+    { id: 'national', label: 'National', icon: Location01Icon },
   ];
 
   const publishedStatusFilters = [
@@ -183,7 +172,7 @@ export function Header({
                       onClick={onSuggestBulkPublishing}
                       className="flex items-center gap-2"
                     >
-                      <Lightbulb className="h-4 w-4" />
+                      <HugeiconsIcon icon={BulbIcon} className="h-4 w-4" />
                       {isSuggestMode ? "System Suggestion Active" : "Suggest Bulk Publishing"}
                     </Button>
                     <Separator orientation="vertical" className="h-6 bg-muted-foreground" />
@@ -196,7 +185,7 @@ export function Header({
                   onClick={onBulkModeToggle}
                   className="flex items-center gap-2"
                 >
-                  <CheckSquare className="h-4 w-4" />
+                  <HugeiconsIcon icon={CheckmarkSquare02Icon} className="h-4 w-4" />
                   {isBulkMode || isSuggestMode ? "Cancel Selection" : "Select Articles"}
                 </Button>
               </>
@@ -205,7 +194,7 @@ export function Header({
             {/* Sort Dropdown */}
             <Select value={sortBy} onValueChange={onSortChange}>
               <SelectTrigger className="w-48">
-                <ArrowUpDown className="h-4 w-4" />
+                <HugeiconsIcon icon={ArrowUpDownIcon} className="h-4 w-4" />
                 <SelectValue placeholder="Sort by" />
               </SelectTrigger>
               <SelectContent>
@@ -221,7 +210,7 @@ export function Header({
             {/* Filter Dropdown */}
             <Select value={filterBy} onValueChange={onFilterChange}>
               <SelectTrigger className="w-40">
-                <Filter className="h-4 w-4" />
+                <HugeiconsIcon icon={FilterIcon} className="h-4 w-4" />
                 <SelectValue placeholder="Filter" />
               </SelectTrigger>
               <SelectContent>
@@ -260,9 +249,8 @@ export function Header({
               ) : (
                 // Show category filters for other tabs
                 quickFilterOptions.map((filter) => {
-                  const Icon = filter.icon;
                   const isActive = quickFilters.includes(filter.id);
-                  
+
                   return (
                     <Button
                       key={filter.id}
@@ -271,7 +259,7 @@ export function Header({
                       onClick={() => handleQuickFilterToggle(filter.id)}
                       className="flex items-center gap-1 text-xs"
                     >
-                      <Icon className="h-3 w-3" />
+                      <HugeiconsIcon icon={filter.icon} className="h-3 w-3" />
                       {filter.label}
                     </Button>
                   );

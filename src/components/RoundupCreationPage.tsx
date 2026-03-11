@@ -4,7 +4,8 @@ import { NewsCard } from './NewsCard';
 import { ScrollArea } from "./ui/scroll-area";
 import { SearchWithSuggestions } from './SearchWithSuggestions';
 import { Separator } from './ui/separator';
-import { ArrowLeft, ArrowUpDown, Filter, Trophy, Heart, Clapperboard, Briefcase, Globe, MapPin, X } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { ArrowLeft01Icon, ArrowUpDownIcon, FilterIcon, ChampionIcon, FavouriteIcon, Film01Icon, Briefcase01Icon, Globe02Icon, Location01Icon, Cancel01Icon } from '@hugeicons/core-free-icons';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { SafetyScoreTag } from './SafetyScoreTag';
@@ -330,12 +331,12 @@ export function RoundupCreationPage({
   };
 
   const quickFilterOptions = [
-    { id: 'sports', label: 'Sports', icon: Trophy },
-    { id: 'health', label: 'Health', icon: Heart },
-    { id: 'entertainment', label: 'Entertainment', icon: Clapperboard },
-    { id: 'business', label: 'Business', icon: Briefcase },
-    { id: 'world', label: 'World', icon: Globe },
-    { id: 'national', label: 'National', icon: MapPin },
+    { id: 'sports', label: 'Sports', icon: ChampionIcon },
+    { id: 'health', label: 'Health', icon: FavouriteIcon },
+    { id: 'entertainment', label: 'Entertainment', icon: Film01Icon },
+    { id: 'business', label: 'Business', icon: Briefcase01Icon },
+    { id: 'world', label: 'World', icon: Globe02Icon },
+    { id: 'national', label: 'National', icon: Location01Icon },
   ];
 
   const handleQuickFilterToggle = (filterId: string) => {
@@ -386,7 +387,7 @@ export function RoundupCreationPage({
               onClick={onBack}
               className="mt-1 flex-shrink-0"
             >
-              <ArrowLeft className="h-4 w-4" />
+              <HugeiconsIcon icon={ArrowLeft01Icon} className="h-4 w-4" />
             </Button>
             
             <div className="flex-1 min-w-0">
@@ -423,7 +424,7 @@ export function RoundupCreationPage({
               {/* Sort Dropdown */}
               <Select value={sortBy} onValueChange={onSortChange}>
                 <SelectTrigger className="w-48">
-                  <ArrowUpDown className="h-4 w-4" />
+                  <HugeiconsIcon icon={ArrowUpDownIcon} className="h-4 w-4" />
                   <SelectValue placeholder="Sort by" />
                 </SelectTrigger>
                 <SelectContent>
@@ -438,7 +439,7 @@ export function RoundupCreationPage({
               {/* Filter Dropdown */}
               <Select value={filterBy} onValueChange={onFilterChange}>
                 <SelectTrigger className="w-40">
-                  <Filter className="h-4 w-4" />
+                  <HugeiconsIcon icon={FilterIcon} className="h-4 w-4" />
                   <SelectValue placeholder="Filter" />
                 </SelectTrigger>
                 <SelectContent>
@@ -457,9 +458,8 @@ export function RoundupCreationPage({
               {/* Quick Filter Tags */}
               <div className="flex items-center gap-2">
                 {quickFilterOptions.map((filter) => {
-                  const Icon = filter.icon;
                   const isActive = quickFilters.includes(filter.id);
-                  
+
                   return (
                     <Button
                       key={filter.id}
@@ -468,7 +468,7 @@ export function RoundupCreationPage({
                       onClick={() => handleQuickFilterToggle(filter.id)}
                       className="flex items-center gap-1 text-xs"
                     >
-                      <Icon className="h-3 w-3" />
+                      <HugeiconsIcon icon={filter.icon} className="h-3 w-3" />
                       {filter.label}
                     </Button>
                   );
@@ -552,7 +552,7 @@ export function RoundupCreationPage({
                           onClick={() => handleRemoveArticle(article.id)}
                           className="absolute top-2 right-2 h-6 w-6 p-0 hover:bg-red-50 hover:text-red-600 z-20 bg-white/80 backdrop-blur-sm shadow-sm border"
                         >
-                          <X className="h-3 w-3" />
+                          <HugeiconsIcon icon={Cancel01Icon} className="h-3 w-3" />
                         </Button>
 
                         {/* Order number */}

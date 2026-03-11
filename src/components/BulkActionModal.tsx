@@ -3,14 +3,15 @@ import { Button } from './ui/button';
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
 import { useState } from 'react';
-import type { LucideIcon } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import type { IconComponent } from '../lib/icons';
 
 interface BulkActionModalProps {
   isOpen: boolean;
   onClose: () => void;
   onConfirm: (text?: string) => void;
   articleCount: number;
-  icon: LucideIcon;
+  icon: IconComponent;
   iconClassName: string;
   iconBgClassName: string;
   title: string;
@@ -26,7 +27,7 @@ export function BulkActionModal({
   onClose,
   onConfirm,
   articleCount,
-  icon: Icon,
+  icon,
   iconClassName,
   iconBgClassName,
   title,
@@ -54,7 +55,7 @@ export function BulkActionModal({
         <DialogHeader className="p-6 pb-4">
           <div className="flex items-center gap-3">
             <div className={`w-10 h-10 rounded-full flex items-center justify-center ${iconBgClassName}`}>
-              <Icon className={`h-5 w-5 ${iconClassName}`} />
+              <HugeiconsIcon icon={icon} className={`h-5 w-5 ${iconClassName}`} />
             </div>
             <div>
               <DialogTitle className="text-lg font-medium">{title}</DialogTitle>

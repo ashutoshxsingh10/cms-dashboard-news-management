@@ -1,4 +1,5 @@
-import { Shield } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Shield01Icon } from '@hugeicons/core-free-icons';
 import { getSafetyTierInfo, getSafetyScorePadding } from '../utils/safetyScore';
 
 interface SafetyScoreTagProps {
@@ -25,7 +26,7 @@ export function SafetyScoreTag({ score, size = 'sm', variant = 'default' }: Safe
           backgroundColor: tierInfo.backgroundColor
         }}
       >
-        <Shield className={iconSize} />
+        <HugeiconsIcon icon={Shield01Icon} className={iconSize} />
         <span className={`${textSize} font-medium`}>{score}</span>
       </div>
     );
@@ -40,7 +41,7 @@ export function SafetyScoreTag({ score, size = 'sm', variant = 'default' }: Safe
         backgroundColor: tierInfo.backgroundColor
       }}
     >
-      <Shield className={iconSize} />
+      <HugeiconsIcon icon={Shield01Icon} className={iconSize} />
       <span className={`${textSize} font-medium`}>{tierInfo.name}</span>
     </div>
   );

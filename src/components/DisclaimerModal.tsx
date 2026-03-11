@@ -1,7 +1,8 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "./ui/dialog";
 import { Button } from "./ui/button";
 import { Alert, AlertDescription } from "./ui/alert";
-import { Info, Code2, Coffee } from "lucide-react";
+import { HugeiconsIcon } from '@hugeicons/react';
+import { InformationCircleIcon, SourceCodeIcon, Coffee01Icon } from '@hugeicons/core-free-icons';
 
 interface DisclaimerModalProps {
   isOpen: boolean;
@@ -15,7 +16,7 @@ export function DisclaimerModal({ isOpen, onClose }: DisclaimerModalProps) {
         <DialogHeader>
           <DialogTitle className="flex items-center gap-3">
             <div className="p-2 bg-primary/10 rounded-full">
-              <Info className="h-5 w-5 text-primary" />
+              <HugeiconsIcon icon={InformationCircleIcon} className="h-5 w-5 text-primary" />
             </div>
             Prototype Disclaimer
           </DialogTitle>
@@ -27,7 +28,7 @@ export function DisclaimerModal({ isOpen, onClose }: DisclaimerModalProps) {
         <div className="space-y-4">
           <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
             <div className="flex items-start gap-3">
-              <Code2 className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
+              <HugeiconsIcon icon={SourceCodeIcon} className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
               <div className="space-y-2">
                 <h4 className="font-medium text-gray-900">Built with ❤️ and Cursor + Figma</h4>
                 <p className="text-sm text-gray-600">
@@ -39,7 +40,7 @@ export function DisclaimerModal({ isOpen, onClose }: DisclaimerModalProps) {
           
           <div className="p-4 rounded-lg">
             <div className="flex items-start gap-3">
-              <Info className="h-5 w-5 text-amber-600 mt-1 flex-shrink-0" />
+              <HugeiconsIcon icon={InformationCircleIcon} className="h-5 w-5 text-amber-600 mt-1 flex-shrink-0" />
               <div className="space-y-2">
                 <h4 className="font-medium text-gray-900">For Viewing Purpose Only</h4>
                 <p className="text-sm text-gray-600">

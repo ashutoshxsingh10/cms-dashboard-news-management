@@ -1,4 +1,4 @@
-import { Eye } from 'lucide-react';
+import { EyeIcon } from '@hugeicons/core-free-icons';
 import { BulkActionModal } from './BulkActionModal';
 
 interface BulkAddToReviewModalProps {
@@ -15,7 +15,7 @@ export function BulkAddToReviewModal({ isOpen, onClose, onConfirm, articleCount 
       onClose={onClose}
       onConfirm={onConfirm}
       articleCount={articleCount}
-      icon={Eye}
+      icon={EyeIcon}
       iconClassName="text-blue-600"
       iconBgClassName="bg-blue-50"
       title="Add to Review"
