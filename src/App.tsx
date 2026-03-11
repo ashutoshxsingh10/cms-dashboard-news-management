@@ -13,7 +13,7 @@ import { StoryPublishModal, StoryPublishSettings } from './components/StoryPubli
 import { StoryArchiveModal } from './components/StoryArchiveModal';
 import { BulkRejectModal } from './components/BulkRejectModal';
 import { BulkAddToReviewModal } from './components/BulkAddToReviewModal';
-import { DisclaimerModal } from './components/DisclaimerModal';
+
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { Toaster } from './components/ui/sonner';
 import { mockArticles } from './data/mockArticles';
@@ -57,8 +57,7 @@ export default function App() {
   const [isStoryCreationMode, setIsStoryCreationMode] = useState(false);
   const [isStoryPrePublishMode, setIsStoryPrePublishMode] = useState(false);
   
-  // Disclaimer modal state
-  const [isDisclaimerModalOpen, setIsDisclaimerModalOpen] = useState(false);
+
   const [pendingStoryData, setPendingStoryData] = useState<{
     headline: string;
     description: string;
@@ -86,15 +85,6 @@ export default function App() {
   const [isRoundupPublishModalOpen, setIsRoundupPublishModalOpen] = useState(false);
   const [isRoundupArchiveModalOpen, setIsRoundupArchiveModalOpen] = useState(false);
 
-  // Show disclaimer on every page load/refresh
-  useEffect(() => {
-    setIsDisclaimerModalOpen(true);
-  }, []);
-
-  // Handle disclaimer acknowledgment
-  const handleDisclaimerClose = () => {
-    setIsDisclaimerModalOpen(false);
-  };
 
   // Auto-select first article when on news-publishing tab and no article is selected
   useEffect(() => {
@@ -1187,11 +1177,6 @@ export default function App() {
         articleCount={selectedArticleIds.length}
       />
 
-      {/* Disclaimer Modal */}
-      <DisclaimerModal
-        isOpen={isDisclaimerModalOpen}
-        onClose={handleDisclaimerClose}
-      />
 
       {/* Create News Story Modal */}
       <CreateNewsStoryModal
