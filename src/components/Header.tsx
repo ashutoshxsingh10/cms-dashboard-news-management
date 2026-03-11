@@ -102,9 +102,14 @@ export function Header({
     <div className="border-b bg-white">
       <div className="px-6 pt-6">
         {/* Header Title */}
-        <div className="mb-2">
-          <h1 className="text-[20pt]">News Publishing</h1>
-          <p className="text-muted-foreground text-[8pt]">Edit, Curate, moderate and Publish news content from here.</p>
+        <div className="mb-2 flex items-start justify-between">
+          <div>
+            <h1 className="text-[20pt]">News Publishing</h1>
+            <p className="text-muted-foreground text-[8pt]">Edit, Curate, moderate and Publish news content from here.</p>
+          </div>
+          <span className="text-[7pt] text-muted-foreground/60 italic whitespace-nowrap mt-1">
+            Crafted with Figma &amp; Cursor
+          </span>
         </div>
 
         {/* Sub-tabs and Search in same row */}
