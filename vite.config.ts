@@ -16,7 +16,7 @@
         'react-hook-form@7.55.0': 'react-hook-form',
         'react-day-picker@8.10.1': 'react-day-picker',
         'next-themes@0.4.6': 'next-themes',
-        'lucide-react@0.487.0': 'lucide-react',
+        '@hugeicons/react@0.5.1': '@hugeicons/react',
         'input-otp@1.4.2': 'input-otp',
         'figma:asset/7f85da696c9b9c2bd4f61947a655e2ae3144a10d.png': path.resolve(__dirname, './src/assets/7f85da696c9b9c2bd4f61947a655e2ae3144a10d.png'),
         'embla-carousel-react@8.6.0': 'embla-carousel-react',
