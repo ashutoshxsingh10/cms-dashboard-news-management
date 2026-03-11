@@ -5,7 +5,7 @@ import { Separator } from "./ui/separator";
 import { Checkbox } from "./ui/checkbox";
 import { SearchWithSuggestions } from "./SearchWithSuggestions";
 import { HugeiconsIcon } from '@hugeicons/react';
-import { Search01Icon, FilterIcon, ArrowUpDownIcon, BulbIcon, CheckmarkSquare02Icon, ChampionIcon, FavouriteIcon, Film01Icon, Briefcase01Icon, Globe02Icon, Location01Icon } from '@hugeicons/core-free-icons';
+import { Search01Icon, FilterIcon, ArrowUpDownIcon, BulbIcon, CheckmarkSquare02Icon, Square01Icon, ChampionIcon, FavouriteIcon, Film01Icon, Briefcase01Icon, Globe02Icon, Location01Icon } from '@hugeicons/core-free-icons';
 import {
   Select,
   SelectContent,
@@ -164,6 +164,15 @@ export function Header({
             {/* Bulk options - only show when showBulkOptions is true */}
             {showBulkOptions && (
               <>
+                {/* Checkbox Toggle - Icon only */}
+                <Button
+                  variant={isBulkMode || isSuggestMode ? "default" : "outline"}
+                  size="icon"
+                  onClick={onBulkModeToggle}
+                >
+                  <HugeiconsIcon icon={isBulkMode || isSuggestMode ? CheckmarkSquare02Icon : Square01Icon} className="h-4 w-4" />
+                </Button>
+
                 {/* Suggest Bulk Publishing Button - Only in pending tab */}
                 {activeSubTab === 'pending' && (
                   <>
@@ -178,16 +187,6 @@ export function Header({
                     <Separator orientation="vertical" className="h-6 bg-muted-foreground" />
                   </>
                 )}
-
-                {/* Checkbox Toggle */}
-                <Button
-                  variant={isBulkMode || isSuggestMode ? "default" : "outline"}
-                  onClick={onBulkModeToggle}
-                  className="flex items-center gap-2"
-                >
-                  <HugeiconsIcon icon={CheckmarkSquare02Icon} className="h-4 w-4" />
-                  {isBulkMode || isSuggestMode ? "Cancel Selection" : "Select Articles"}
-                </Button>
               </>
             )}
 
