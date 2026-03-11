@@ -19,9 +19,13 @@
   --destructive: #d4183d;
   --destructive-foreground: #ffffff;
   --border: rgba(0, 0, 0, 0.1);
+  --input-border: #D9D9D9;
   --input: transparent;
   --input-background: #f3f3f5;
   --switch-background: #cbced4;
+  --surface: #F4F6F7;
+  --surface-selected: #F0F1FC;
+  --surface-accent: #F4F5FC;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
   --ring: oklch(0.708 0 0);
@@ -97,8 +101,12 @@
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
+  --color-input-border: var(--input-border);
   --color-input-background: var(--input-background);
   --color-switch-background: var(--switch-background);
+  --color-surface: var(--surface);
+  --color-surface-selected: var(--surface-selected);
+  --color-surface-accent: var(--surface-accent);
   --color-ring: var(--ring);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);

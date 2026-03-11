@@ -51,8 +51,8 @@ export function DateFilters({ selectedDate, onDateChange }: DateFiltersProps) {
             className={`
               h-8 relative rounded-lg shrink-0 transition-all duration-200
               ${isActive 
-                ? 'bg-white shadow-[0px_4px_10px_0px_rgba(0,0,0,0.2)]' 
-                : 'hover:bg-gray-50 hover:shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)]'
+                ? 'bg-white shadow-lg' 
+                : 'hover:bg-gray-50 hover:shadow-sm'
               }
             `}
           >
@@ -66,8 +66,8 @@ export function DateFilters({ selectedDate, onDateChange }: DateFiltersProps) {
             </div>
             <div 
               className={`
-                absolute inset-0 pointer-events-none rounded-lg border border-solid border-[#d0d5dd]
-                ${!isActive ? 'shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)]' : ''}
+                absolute inset-0 pointer-events-none rounded-lg border border-solid border-input-border
+                ${!isActive ? 'shadow-sm' : ''}
               `} 
             />
           </button>

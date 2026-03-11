@@ -4,7 +4,8 @@ import { NewsCard } from './NewsCard';
 import { NewsDetail } from './NewsDetail';
 import { ScrollArea } from "./ui/scroll-area";
 import { Separator } from './ui/separator';
-import { ArrowLeft, Edit3, Archive, Send, Clock, Calendar, Tag } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { ArrowLeft01Icon, Edit02Icon, ArchiveIcon, SentIcon, Clock01Icon, Calendar03Icon, Tag01Icon } from '@hugeicons/core-free-icons';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { SafetyScoreTag } from './SafetyScoreTag';
 import type { NewsArticle } from '../types';
@@ -78,7 +79,7 @@ export function RoundupPrePublishPage({
               onClick={onBack}
               className="mt-1 flex-shrink-0"
             >
-              <ArrowLeft className="h-4 w-4" />
+              <HugeiconsIcon icon={ArrowLeft01Icon} className="h-4 w-4" />
             </Button>
             
             <div className="flex-1 min-w-0">
@@ -99,7 +100,7 @@ export function RoundupPrePublishPage({
         <div className="px-6 py-4 border-t bg-gray-50">
           <div className="flex items-center">
             <Button variant="outline" onClick={onEdit} className="flex items-center gap-2">
-              <Edit3 className="h-4 w-4" />
+              <HugeiconsIcon icon={Edit02Icon} className="h-4 w-4" />
               Edit Selection
             </Button>
           </div>

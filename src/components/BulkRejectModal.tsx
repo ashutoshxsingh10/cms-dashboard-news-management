@@ -1,4 +1,4 @@
-import { AlertTriangle } from 'lucide-react';
+import { Alert02Icon } from '@hugeicons/core-free-icons';
 import { BulkActionModal } from './BulkActionModal';
 
 interface BulkRejectModalProps {
@@ -15,7 +15,7 @@ export function BulkRejectModal({ isOpen, onClose, onConfirm, articleCount }: Bu
       onClose={onClose}
       onConfirm={onConfirm}
       articleCount={articleCount}
-      icon={AlertTriangle}
+      icon={Alert02Icon}
       iconClassName="text-red-600"
       iconBgClassName="bg-red-50"
       title="Reject Articles"

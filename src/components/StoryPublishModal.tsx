@@ -10,7 +10,8 @@ import { Badge } from './ui/badge';
 import { Separator } from './ui/separator';
 import { Label } from './ui/label';
 import { RadioGroup, RadioGroupItem } from './ui/radio-group';
-import { CalendarIcon, Clock } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Calendar03Icon, Clock01Icon } from '@hugeicons/core-free-icons';
 import { format } from 'date-fns';
 
 interface StoryPublishModalProps {
@@ -243,7 +244,7 @@ export function StoryPublishModal({
                         variant="outline"
                         className="w-full justify-start text-left font-normal"
                       >
-                        <CalendarIcon className="mr-2 h-4 w-4" />
+                        <HugeiconsIcon icon={Calendar03Icon} className="mr-2 h-4 w-4" />
                         {settings.customDate ? format(settings.customDate, "MMM dd") : "Pick date"}
                       </Button>
                     </PopoverTrigger>
@@ -261,7 +262,7 @@ export function StoryPublishModal({
 
                 {/* Time Picker */}
                 <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4 text-muted-foreground" />
+                  <HugeiconsIcon icon={Clock01Icon} className="h-4 w-4 text-muted-foreground" />
                   <Input
                     type="time"
                     value={settings.customTime}
@@ -432,7 +433,7 @@ export function StoryPublishModal({
           <Button 
             onClick={handleConfirm}
             disabled={Object.keys(errors).some(key => errors[key])}
-            className="bg-[#5767F2] hover:bg-[#2533B0] text-white"
+            className="bg-primary text-primary-foreground hover:bg-primary/90"
           >
             Publish Story
           </Button>

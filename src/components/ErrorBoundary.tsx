@@ -1,6 +1,7 @@
 import { Component, type ReactNode } from 'react';
 import { Button } from './ui/button';
-import { AlertTriangle } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Alert02Icon } from '@hugeicons/core-free-icons';
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -35,7 +36,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
         <div className="h-full flex items-center justify-center bg-gray-50">
           <div className="text-center max-w-md p-8">
             <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-4">
-              <AlertTriangle className="h-6 w-6 text-red-600" />
+              <HugeiconsIcon icon={Alert02Icon} className="h-6 w-6 text-red-600" />
             </div>
             <h2 className="text-lg font-semibold mb-2">Something went wrong</h2>
             <p className="text-sm text-muted-foreground mb-4">

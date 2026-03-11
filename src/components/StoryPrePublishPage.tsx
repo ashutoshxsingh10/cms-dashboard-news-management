@@ -4,7 +4,8 @@ import { NewsCard } from './NewsCard';
 import { NewsDetail } from './NewsDetail';
 import { ScrollArea } from "./ui/scroll-area";
 import { Separator } from './ui/separator';
-import { ArrowLeft, Edit3, Archive, Send, Clock, Calendar, Tag } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { ArrowLeft01Icon, Edit02Icon, ArchiveIcon, SentIcon, Clock01Icon, Calendar03Icon, Tag01Icon } from '@hugeicons/core-free-icons';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { SafetyScoreTag } from './SafetyScoreTag';
 import type { NewsArticle } from '../types';
@@ -67,7 +68,7 @@ export function StoryPrePublishPage({
               onClick={onBack}
               className="mt-1 flex-shrink-0"
             >
-              <ArrowLeft className="h-4 w-4" />
+              <HugeiconsIcon icon={ArrowLeft01Icon} className="h-4 w-4" />
             </Button>
             
             <div className="flex-1 min-w-0">
@@ -88,7 +89,7 @@ export function StoryPrePublishPage({
         <div className="px-6 py-4 border-t bg-gray-50">
           <div className="flex items-center">
             <Button variant="outline" onClick={onEdit} className="flex items-center gap-2">
-              <Edit3 className="h-4 w-4" />
+              <HugeiconsIcon icon={Edit02Icon} className="h-4 w-4" />
               Edit Selection
             </Button>
           </div>
@@ -153,21 +154,16 @@ export function StoryPrePublishPage({
                       onClick={() => handleStoryAction('archive')}
                       className="flex items-center gap-2 bg-gray-100 text-black border border-gray-300 hover:bg-gray-200"
                     >
-                      <Archive className="h-4 w-4" />
+                      <HugeiconsIcon icon={ArchiveIcon} className="h-4 w-4" />
                       Archive Story
                     </Button>
                   </div>
                   <div className="flex gap-3">
                     <Button 
                       onClick={() => handleStoryAction('publish')}
-                      style={{
-                        backgroundColor: '#5767F2',
-                        borderColor: '#2533B0',
-                        color: 'white'
-                      }}
-                      className="flex items-center gap-2 border hover:opacity-90"
+                      className="flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
                     >
-                      <Send className="h-4 w-4" />
+                      <HugeiconsIcon icon={SentIcon} className="h-4 w-4" />
                       Publish Story
                     </Button>
                   </div>
@@ -175,7 +171,7 @@ export function StoryPrePublishPage({
               </div>
             </div>
           ) : (
-            <div className="h-full flex items-center justify-center" style={{ backgroundColor: '#F4F6F7' }}>
+            <div className="h-full flex items-center justify-center bg-surface">
               <div className="text-center">
                 <div className="text-muted-foreground mb-2">No article selected</div>
                 <p className="text-sm text-muted-foreground">

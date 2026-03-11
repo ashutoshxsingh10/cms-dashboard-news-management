@@ -1,4 +1,5 @@
-import { Shield, CheckCircle, AlertTriangle } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Shield01Icon, CheckmarkCircle02Icon, Alert02Icon } from '@hugeicons/core-free-icons';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "./ui/dialog";
 import { Button } from "./ui/button";
 
@@ -26,7 +27,7 @@ export function SafetyScoreConfirmModal({
           textColor: 'text-green-700',
           borderColor: '#16a34a',
           backgroundColor: 'rgba(220, 252, 231, 0.5)',
-          icon: CheckCircle,
+          icon: CheckmarkCircle02Icon,
           description: 'Content is fully ready for immediate publication'
         };
       case 4:
@@ -35,7 +36,7 @@ export function SafetyScoreConfirmModal({
           textColor: 'text-green-600',
           borderColor: '#059669',
           backgroundColor: 'rgba(220, 252, 231, 0.3)',
-          icon: CheckCircle,
+          icon: CheckmarkCircle02Icon,
           description: 'Content is suitable for publication with minimal concerns'
         };
       case 3:
@@ -44,7 +45,7 @@ export function SafetyScoreConfirmModal({
           textColor: 'text-amber-700',
           borderColor: '#d97706',
           backgroundColor: 'rgba(254, 243, 199, 0.5)',
-          icon: Shield,
+          icon: Shield01Icon,
           description: 'Content should be reviewed before publishing'
         };
       case 2:
@@ -53,7 +54,7 @@ export function SafetyScoreConfirmModal({
           textColor: 'text-orange-700',
           borderColor: '#ea580c',
           backgroundColor: 'rgba(254, 215, 170, 0.5)',
-          icon: AlertTriangle,
+          icon: Alert02Icon,
           description: 'Content requires significant editing before publication'
         };
       case 1:
@@ -63,7 +64,7 @@ export function SafetyScoreConfirmModal({
           textColor: 'text-red-700',
           borderColor: '#dc2626',
           backgroundColor: 'rgba(254, 202, 202, 0.5)',
-          icon: AlertTriangle,
+          icon: Alert02Icon,
           description: 'Content is not suitable for publication'
         };
     }
@@ -75,10 +76,10 @@ export function SafetyScoreConfirmModal({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="max-w-md">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <Shield className="h-5 w-5 text-primary" />
+            <HugeiconsIcon icon={Shield01Icon} className="h-5 w-5 text-primary" />
             Update Content Safety Rating
           </DialogTitle>
           <DialogDescription className="text-left">
@@ -91,13 +92,13 @@ export function SafetyScoreConfirmModal({
           <div className="flex items-center justify-between p-4 bg-muted rounded-lg">
             <span className="text-sm font-medium">New Safety Rating:</span>
             <div 
-              className={`flex items-center gap-2 rounded-[8px] border px-3 py-2 ${newTierInfo.textColor}`}
+              className={`flex items-center gap-2 rounded-lg border px-3 py-2 ${newTierInfo.textColor}`}
               style={{ 
                 borderColor: newTierInfo.borderColor,
                 backgroundColor: newTierInfo.backgroundColor
               }}
             >
-              <IconComponent className="h-4 w-4" />
+              <HugeiconsIcon icon={IconComponent} className="h-4 w-4" />
               <span className="text-sm font-medium">{newTierInfo.name}</span>
             </div>
           </div>
@@ -125,12 +126,7 @@ export function SafetyScoreConfirmModal({
           </Button>
           <Button 
             onClick={onConfirm}
-            style={{
-              backgroundColor: '#5767F2',
-              borderColor: '#2533B0',
-              color: 'white'
-            }}
-            className="border hover:opacity-90"
+            className="bg-primary text-primary-foreground hover:bg-primary/90"
           >
             Update Rating
           </Button>

@@ -9,7 +9,8 @@ import { ScrollArea } from "./ui/scroll-area";
 import { SafetyScoreDropdown } from "./SafetyScoreDropdown";
 import { SafetyScoreConfirmModal } from "./SafetyScoreConfirmModal";
 import { TagsInput } from "./TagsInput";
-import { Edit, ExternalLink, RotateCcw, Undo, X, ChevronDown, Pause, Square, Send, Archive } from "lucide-react";
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Edit01Icon, LinkSquare02Icon, RotateLeft01Icon, UndoIcon, Cancel01Icon, ArrowDown01Icon, PauseIcon, Square01Icon, SentIcon, ArchiveIcon } from '@hugeicons/core-free-icons';
 import { PublishModal } from './PublishModal';
 import { RejectConfirmModal } from './RejectConfirmModal';
 import { AddToReviewConfirmModal } from './AddToReviewConfirmModal';
@@ -104,7 +105,7 @@ export function NewsDetail({
 
   if (!article) {
     return (
-      <div className="h-full flex items-center justify-center" style={{ backgroundColor: '#F4F6F7' }}>
+      <div className="h-full flex items-center justify-center bg-surface">
         <div className="text-center">
           <div className="text-muted-foreground mb-2">No article selected</div>
           <p className="text-sm text-muted-foreground">
@@ -428,16 +429,16 @@ export function NewsDetail({
                   onClick={() => onRoundupActionClick?.('pause')}
                   className="flex items-center gap-2 bg-gray-100 text-black border border-gray-300 hover:bg-gray-200"
                 >
-                  <Pause className="h-4 w-4" />
+                  <HugeiconsIcon icon={PauseIcon} className="h-4 w-4" />
                   Pause
                 </Button>
               </div>
               <div className="flex gap-3">
-                <Button 
+                <Button
                   onClick={() => onRoundupActionClick?.('end')}
                   className="flex items-center gap-2 bg-red-500 text-white border border-red-600 hover:bg-red-600"
                 >
-                  <Square className="h-4 w-4" />
+                  <HugeiconsIcon icon={Square01Icon} className="h-4 w-4" />
                   Stop Publish
                 </Button>
               </div>
@@ -450,12 +451,7 @@ export function NewsDetail({
               <div className="flex gap-3">
                 <Button 
                   onClick={() => onRoundupActionClick?.('resume')}
-                  style={{
-                    backgroundColor: '#5767F2',
-                    borderColor: '#2533B0',
-                    color: 'white'
-                  }}
-                  className="border hover:opacity-90"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90"
                 >
                   Resume Round-up
                 </Button>
@@ -463,7 +459,7 @@ export function NewsDetail({
                   onClick={() => onRoundupActionClick?.('end')}
                   className="flex items-center gap-2 bg-red-500 text-white border border-red-600 hover:bg-red-600"
                 >
-                  <Square className="h-4 w-4" />
+                  <HugeiconsIcon icon={Square01Icon} className="h-4 w-4" />
                   End Round-up
                 </Button>
               </div>
@@ -527,12 +523,7 @@ export function NewsDetail({
               </Button>
               <Button 
                 onClick={handleBulkPublishClick}
-                style={{
-                  backgroundColor: '#5767F2',
-                  borderColor: '#2533B0',
-                  color: 'white'
-                }}
-                className="border hover:opacity-90"
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
                 disabled={selectedArticleIds.length === 0}
               >
                 Publish {selectedArticleIds.length} Article{selectedArticleIds.length !== 1 ? 's' : ''}
@@ -544,7 +535,7 @@ export function NewsDetail({
         return (
           <>
             <div className="flex">
-              <Button 
+              <Button
                 onClick={handleRejectClick}
                 variant="outline"
                 className="text-red-600 border-red-600 hover:bg-red-50"
@@ -554,14 +545,9 @@ export function NewsDetail({
               </Button>
             </div>
             <div className="flex gap-3">
-              <Button 
+              <Button
                 onClick={handleBulkPublishClick}
-                style={{
-                  backgroundColor: '#5767F2',
-                  borderColor: '#2533B0',
-                  color: 'white'
-                }}
-                className="border hover:opacity-90"
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
                 disabled={selectedArticleIds.length === 0}
               >
                 Publish {selectedArticleIds.length} Article{selectedArticleIds.length !== 1 ? 's' : ''}
@@ -610,12 +596,7 @@ export function NewsDetail({
               </Button>
               <Button 
                 onClick={handlePublishClick}
-                style={{
-                  backgroundColor: '#5767F2',
-                  borderColor: '#2533B0',
-                  color: 'white'
-                }}
-                className="border hover:opacity-90"
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 Publish
               </Button>
@@ -638,12 +619,7 @@ export function NewsDetail({
             <div className="flex gap-3">
               <Button 
                 onClick={handlePublishClick}
-                style={{
-                  backgroundColor: '#5767F2',
-                  borderColor: '#2533B0',
-                  color: 'white'
-                }}
-                className="border hover:opacity-90"
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 Publish
               </Button>
@@ -675,14 +651,14 @@ export function NewsDetail({
                 onClick={handlePausePublishingClick}
                 className="flex items-center gap-2 bg-gray-100 text-black border border-gray-300 hover:bg-gray-200"
               >
-                <Pause className="h-4 w-4" />
+                <HugeiconsIcon icon={PauseIcon} className="h-4 w-4" />
                 Pause
               </Button>
-              <Button 
+              <Button
                 onClick={handleEndPublishingClick}
                 className="flex items-center gap-2 bg-red-500 text-white border border-red-600 hover:bg-red-600"
               >
-                <Square className="h-4 w-4" />
+                <HugeiconsIcon icon={Square01Icon} className="h-4 w-4" />
                 End Publishing
               </Button>
             </div>
@@ -711,11 +687,10 @@ export function NewsDetail({
                 className="p-4 rounded-2xl" 
                 style={{
                   height: '96px',
-                  backgroundColor: '#F4F5FC',
                   border: isBreaking ? '1px solid #873DFF' : 'none',
-                  background: isBreaking 
-                    ? 'linear-gradient(90deg, rgba(135, 61, 255, 0.10) 0%, rgba(255, 24, 24, 0.10) 100%), #F4F5FC'
-                    : '#F4F5FC'
+                  background: isBreaking
+                    ? 'linear-gradient(90deg, rgba(135, 61, 255, 0.10) 0%, rgba(255, 24, 24, 0.10) 100%), var(--surface-accent)'
+                    : 'var(--surface-accent)'
                 }}
               >
                 <div className="flex items-start justify-between gap-4 h-full">
@@ -744,7 +719,7 @@ export function NewsDetail({
                     onClick={handleTitleEditClick}
                     aria-label="Edit title"
                   >
-                    <Edit className="h-4 w-4" />
+                    <HugeiconsIcon icon={Edit01Icon} className="h-4 w-4" />
                   </Button>
                 </div>
               </div>
@@ -888,7 +863,7 @@ export function NewsDetail({
                       disabled={isEditingRestricted}
                       aria-label="Open CTA URL"
                     >
-                      <ExternalLink className="h-4 w-4" />
+                      <HugeiconsIcon icon={LinkSquare02Icon} className="h-4 w-4" />
                     </Button>
                   </div>
                 </div>
@@ -907,7 +882,7 @@ export function NewsDetail({
                     disabled={isEditingRestricted}
                     className="p-2"
                   >
-                    <Undo className="h-3 w-3" />
+                    <HugeiconsIcon icon={UndoIcon} className="h-3 w-3" />
                   </Button>
                   <Button 
                     size="sm" 
@@ -916,7 +891,7 @@ export function NewsDetail({
                     className="text-xs"
                     disabled={isEditingRestricted}
                   >
-                    <RotateCcw className="h-3 w-3 mr-1" />
+                    <HugeiconsIcon icon={RotateLeft01Icon} className="h-3 w-3 mr-1" />
                     Regenerate
                   </Button>
                 </div>

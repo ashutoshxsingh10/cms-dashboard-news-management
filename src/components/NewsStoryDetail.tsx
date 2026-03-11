@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
-import { ArrowLeft } from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { ArrowLeft01Icon } from '@hugeicons/core-free-icons';
 import { Button } from './ui/button';
 import { NewsCard } from './NewsCard';
 import { NewsDetail } from './NewsDetail';
@@ -193,7 +194,7 @@ export function NewsStoryDetail({
               onClick={onBack}
               className="mt-1"
             >
-              <ArrowLeft className="h-4 w-4" />
+              <HugeiconsIcon icon={ArrowLeft01Icon} className="h-4 w-4" />
             </Button>
             
             <div className="flex-1 min-w-0">

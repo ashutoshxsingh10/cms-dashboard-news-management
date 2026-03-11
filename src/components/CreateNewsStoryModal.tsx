@@ -122,7 +122,7 @@ export default function CreateNewsStoryModal({
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-[500px]">
+      <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle>Create New News Story</DialogTitle>
           <DialogDescription>
@@ -248,12 +248,7 @@ export default function CreateNewsStoryModal({
           <Button 
             onClick={handleProceed}
             disabled={loading}
-            style={{
-              backgroundColor: '#5767F2',
-              borderColor: '#2533B0',
-              color: 'white'
-            }}
-            className="border hover:opacity-90"
+            className="bg-primary text-primary-foreground hover:bg-primary/90"
           >
             {loading ? "Creating..." : "Proceed"}
           </Button>

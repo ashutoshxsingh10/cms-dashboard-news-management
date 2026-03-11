@@ -3,7 +3,8 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Button } from "./ui/button";
 import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
-import { Archive, AlertTriangle } from "lucide-react";
+import { HugeiconsIcon } from '@hugeicons/react';
+import { ArchiveIcon, Alert02Icon } from '@hugeicons/core-free-icons';
 
 interface ArchiveModalProps {
   isOpen: boolean;
@@ -44,10 +45,10 @@ export function ArchiveModal({
 
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-[500px]">
+      <DialogContent className="sm:max-w-lg">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
-            <Archive className="h-5 w-5 text-orange-600" />
+            <HugeiconsIcon icon={ArchiveIcon} className="h-5 w-5 text-orange-600" />
             Archive {entityLabel}
           </DialogTitle>
           <DialogDescription>
@@ -59,7 +60,7 @@ export function ArchiveModal({
           {/* Warning Notice */}
           <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
             <div className="flex items-start gap-3">
-              <AlertTriangle className="h-5 w-5 text-orange-600 flex-shrink-0 mt-0.5" />
+              <HugeiconsIcon icon={Alert02Icon} className="h-5 w-5 text-orange-600 flex-shrink-0 mt-0.5" />
               <div className="space-y-2">
                 <h4 className="font-medium text-orange-900">{entityLabel} will be archived</h4>
                 <ul className="text-sm text-orange-800 space-y-1">
@@ -116,7 +117,7 @@ export function ArchiveModal({
             variant="destructive"
             className="bg-orange-600 hover:bg-orange-700"
           >
-            <Archive className="h-4 w-4 mr-2" />
+            <HugeiconsIcon icon={ArchiveIcon} className="h-4 w-4 mr-2" />
             Archive {entityLabel}
           </Button>
         </DialogFooter>

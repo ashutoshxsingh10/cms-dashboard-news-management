@@ -3,19 +3,8 @@ import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { ScrollArea } from './ui/scroll-area';
 import { Separator } from './ui/separator';
-import { 
-  Search, 
-  Filter,
-  Zap,
-  Tag,
-  Calendar,
-  Globe,
-  Shield,
-  ChevronRight,
-  Sparkles,
-  Clock,
-  TrendingUp
-} from 'lucide-react';
+import { HugeiconsIcon } from '@hugeicons/react';
+import { Search01Icon, FilterIcon, FlashIcon, Tag01Icon, Calendar03Icon, Globe02Icon, Shield01Icon, ArrowRight01Icon, SparklesIcon, Clock01Icon, AnalyticsUpIcon } from '@hugeicons/core-free-icons';
 
 interface SearchSuggestion {
   id: string;
@@ -73,21 +62,21 @@ export function SearchWithSuggestions({
       switch (activeSubTab) {
         case 'pending':
           suggestions.push(
-            { id: 'breaking-news', text: 'breaking news', description: 'Breaking news articles', icon: <Zap className="h-4 w-4" />, category: 'contextual' },
-            { id: 'high-safety', text: 'safety score > 8', description: 'High safety articles', icon: <Shield className="h-4 w-4" />, category: 'operator' },
-            { id: 'last-hour', text: 'last 1 hour', description: 'Recently ingested', icon: <Clock className="h-4 w-4" />, category: 'time' }
+            { id: 'breaking-news', text: 'breaking news', description: 'Breaking news articles', icon: <HugeiconsIcon icon={FlashIcon} className="h-4 w-4" />, category: 'contextual' },
+            { id: 'high-safety', text: 'safety score > 8', description: 'High safety articles', icon: <HugeiconsIcon icon={Shield01Icon} className="h-4 w-4" />, category: 'operator' },
+            { id: 'last-hour', text: 'last 1 hour', description: 'Recently ingested', icon: <HugeiconsIcon icon={Clock01Icon} className="h-4 w-4" />, category: 'time' }
           );
           break;
         case 'published':
           suggestions.push(
-            { id: 'live-status', text: 'status:live', description: 'Currently live articles', icon: <Globe className="h-4 w-4" />, category: 'operator' },
-            { id: 'trending', text: 'trending', description: 'Popular articles', icon: <TrendingUp className="h-4 w-4" />, category: 'contextual' }
+            { id: 'live-status', text: 'status:live', description: 'Currently live articles', icon: <HugeiconsIcon icon={Globe02Icon} className="h-4 w-4" />, category: 'operator' },
+            { id: 'trending', text: 'trending', description: 'Popular articles', icon: <HugeiconsIcon icon={AnalyticsUpIcon} className="h-4 w-4" />, category: 'contextual' }
           );
           break;
         case 'review':
           suggestions.push(
-            { id: 'low-safety', text: 'safety score < 6', description: 'Articles needing review', icon: <Shield className="h-4 w-4" />, category: 'operator' },
-            { id: 'flagged', text: 'flagged content', description: 'Flagged for review', icon: <Filter className="h-4 w-4" />, category: 'contextual' }
+            { id: 'low-safety', text: 'safety score < 6', description: 'Articles needing review', icon: <HugeiconsIcon icon={Shield01Icon} className="h-4 w-4" />, category: 'operator' },
+            { id: 'flagged', text: 'flagged content', description: 'Flagged for review', icon: <HugeiconsIcon icon={FilterIcon} className="h-4 w-4" />, category: 'contextual' }
           );
           break;
       }
@@ -99,7 +88,7 @@ export function SearchWithSuggestions({
           id: `source-${source.toLowerCase()}`,
           text: `source:${source.toLowerCase()}`,
           description: `Articles from ${source}`,
-          icon: <Globe className="h-4 w-4" />,
+          icon: <HugeiconsIcon icon={Globe02Icon} className="h-4 w-4" />,
           category: 'source'
         });
       });
@@ -118,7 +107,7 @@ export function SearchWithSuggestions({
           id: `tag-${tag}`,
           text: tag.toLowerCase(),
           description: `Articles tagged with ${tag}`,
-          icon: <Tag className="h-4 w-4" />,
+          icon: <HugeiconsIcon icon={Tag01Icon} className="h-4 w-4" />,
           category: 'category' as const
         }));
       
@@ -127,9 +116,9 @@ export function SearchWithSuggestions({
     } else if (activeTab === 'news-roundup' && roundups.length > 0) {
       // Roundup-specific suggestions
       suggestions.push(
-        { id: 'daily-digest', text: 'daily digest', description: 'Daily roundups', icon: <Calendar className="h-4 w-4" />, category: 'contextual' },
-        { id: 'weekly-summary', text: 'weekly summary', description: 'Weekly roundups', icon: <Calendar className="h-4 w-4" />, category: 'contextual' },
-        { id: 'breaking-roundup', text: 'breaking news', description: 'Breaking news roundups', icon: <Zap className="h-4 w-4" />, category: 'contextual' }
+        { id: 'daily-digest', text: 'daily digest', description: 'Daily roundups', icon: <HugeiconsIcon icon={Calendar03Icon} className="h-4 w-4" />, category: 'contextual' },
+        { id: 'weekly-summary', text: 'weekly summary', description: 'Weekly roundups', icon: <HugeiconsIcon icon={Calendar03Icon} className="h-4 w-4" />, category: 'contextual' },
+        { id: 'breaking-roundup', text: 'breaking news', description: 'Breaking news roundups', icon: <HugeiconsIcon icon={FlashIcon} className="h-4 w-4" />, category: 'contextual' }
       );
 
       // Extract roundup types from actual data
@@ -139,7 +128,7 @@ export function SearchWithSuggestions({
           id: `type-${type}`,
           text: type.toLowerCase(),
           description: `${type} roundups`,
-          icon: <Tag className="h-4 w-4" />,
+          icon: <HugeiconsIcon icon={Tag01Icon} className="h-4 w-4" />,
           category: 'category'
         });
       });
@@ -147,9 +136,9 @@ export function SearchWithSuggestions({
     } else if (activeTab === 'news-stories' && newsStories.length > 0) {
       // News Stories-specific suggestions
       suggestions.push(
-        { id: 'ongoing-stories', text: 'ongoing stories', description: 'Currently active stories', icon: <TrendingUp className="h-4 w-4" />, category: 'contextual' },
-        { id: 'breaking-stories', text: 'breaking stories', description: 'Breaking news stories', icon: <Zap className="h-4 w-4" />, category: 'contextual' },
-        { id: 'international-stories', text: 'international', description: 'International news stories', icon: <Globe className="h-4 w-4" />, category: 'contextual' }
+        { id: 'ongoing-stories', text: 'ongoing stories', description: 'Currently active stories', icon: <HugeiconsIcon icon={AnalyticsUpIcon} className="h-4 w-4" />, category: 'contextual' },
+        { id: 'breaking-stories', text: 'breaking stories', description: 'Breaking news stories', icon: <HugeiconsIcon icon={FlashIcon} className="h-4 w-4" />, category: 'contextual' },
+        { id: 'international-stories', text: 'international', description: 'International news stories', icon: <HugeiconsIcon icon={Globe02Icon} className="h-4 w-4" />, category: 'contextual' }
       );
 
       // Extract story types from actual data
@@ -159,7 +148,7 @@ export function SearchWithSuggestions({
           id: `story-type-${type}`,
           text: type.toLowerCase(),
           description: `${type} stories`,
-          icon: <Tag className="h-4 w-4" />,
+          icon: <HugeiconsIcon icon={Tag01Icon} className="h-4 w-4" />,
           category: 'category'
         });
       });
@@ -178,7 +167,7 @@ export function SearchWithSuggestions({
           id: `story-tag-${tag}`,
           text: tag.toLowerCase(),
           description: `Stories tagged with ${tag}`,
-          icon: <Tag className="h-4 w-4" />,
+          icon: <HugeiconsIcon icon={Tag01Icon} className="h-4 w-4" />,
           category: 'category' as const
         }));
       
@@ -187,15 +176,15 @@ export function SearchWithSuggestions({
 
     // Time-based suggestions (universal)
     suggestions.push(
-      { id: 'today', text: 'today', description: 'Content from today', icon: <Calendar className="h-4 w-4" />, category: 'time' },
-      { id: 'yesterday', text: 'yesterday', description: 'Content from yesterday', icon: <Calendar className="h-4 w-4" />, category: 'time' },
-      { id: 'this-week', text: 'this week', description: 'Content from this week', icon: <Calendar className="h-4 w-4" />, category: 'time' }
+      { id: 'today', text: 'today', description: 'Content from today', icon: <HugeiconsIcon icon={Calendar03Icon} className="h-4 w-4" />, category: 'time' },
+      { id: 'yesterday', text: 'yesterday', description: 'Content from yesterday', icon: <HugeiconsIcon icon={Calendar03Icon} className="h-4 w-4" />, category: 'time' },
+      { id: 'this-week', text: 'this week', description: 'Content from this week', icon: <HugeiconsIcon icon={Calendar03Icon} className="h-4 w-4" />, category: 'time' }
     );
 
     // Advanced operators
     suggestions.push(
-      { id: 'time-24h', text: 'time:24h', description: 'Last 24 hours', icon: <Clock className="h-4 w-4" />, category: 'operator' },
-      { id: 'time-7d', text: 'time:7d', description: 'Last 7 days', icon: <Clock className="h-4 w-4" />, category: 'operator' }
+      { id: 'time-24h', text: 'time:24h', description: 'Last 24 hours', icon: <HugeiconsIcon icon={Clock01Icon} className="h-4 w-4" />, category: 'operator' },
+      { id: 'time-7d', text: 'time:7d', description: 'Last 7 days', icon: <HugeiconsIcon icon={Clock01Icon} className="h-4 w-4" />, category: 'operator' }
     );
 
     return suggestions;
@@ -240,11 +229,11 @@ export function SearchWithSuggestions({
   };
 
   const categoryIcons = {
-    contextual: <Sparkles className="h-4 w-4" />,
-    operator: <Filter className="h-4 w-4" />,
-    source: <Globe className="h-4 w-4" />,
-    category: <Tag className="h-4 w-4" />,
-    time: <Clock className="h-4 w-4" />
+    contextual: <HugeiconsIcon icon={SparklesIcon} className="h-4 w-4" />,
+    operator: <HugeiconsIcon icon={FilterIcon} className="h-4 w-4" />,
+    source: <HugeiconsIcon icon={Globe02Icon} className="h-4 w-4" />,
+    category: <HugeiconsIcon icon={Tag01Icon} className="h-4 w-4" />,
+    time: <HugeiconsIcon icon={Clock01Icon} className="h-4 w-4" />
   };
 
   const categoryOrder = ['contextual', 'operator', 'source', 'category', 'time'];
@@ -252,7 +241,7 @@ export function SearchWithSuggestions({
   return (
     <div className="relative w-80" ref={dropdownRef}>
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <HugeiconsIcon icon={Search01Icon} className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <Input
           ref={inputRef}
           placeholder={placeholder}
@@ -264,7 +253,7 @@ export function SearchWithSuggestions({
       </div>
 
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg border border-[#D9D9D9] shadow-xl z-50 overflow-hidden">
+        <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg border border-input-border shadow-xl z-50 overflow-hidden">
           <div className="max-h-80 w-full">
             {/* Search Tips Header */}
             {value.trim() === '' && (
@@ -310,7 +299,7 @@ export function SearchWithSuggestions({
                                   </div>
                                 )}
                               </div>
-                              <ChevronRight className="h-3 w-3 text-muted-foreground flex-shrink-0" />
+                              <HugeiconsIcon icon={ArrowRight01Icon} className="h-3 w-3 text-muted-foreground flex-shrink-0" />
                             </div>
                           </Button>
                         ))}
