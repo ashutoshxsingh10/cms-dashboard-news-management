@@ -289,10 +289,8 @@ export function CMSContent({
                 </svg>
                 <span className="opacity-70">Figma</span>
                 <span className="text-muted-foreground/25 mx-0.5">+</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="opacity-50">
-                  <rect width="24" height="24" rx="5" fill="#1A1A1A"/>
-                  <path d="M7 5.5L12 12L7 18.5" stroke="#8B8B8B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M17 5.5L12 12L17 18.5" stroke="#555" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" fillRule="evenodd" xmlns="http://www.w3.org/2000/svg" className="opacity-50">
+                  <path d="M22.106 5.68L12.5.135a.998.998 0 00-.998 0L1.893 5.68a.84.84 0 00-.419.726v11.186c0 .3.16.577.42.727l9.607 5.547a.999.999 0 00.998 0l9.608-5.547a.84.84 0 00.42-.727V6.407a.84.84 0 00-.42-.726zm-.603 1.176L12.228 22.92c-.063.108-.228.064-.228-.061V12.34a.59.59 0 00-.295-.51l-9.11-5.26c-.107-.062-.063-.228.062-.228h18.55c.264 0 .428.286.296.514z"/>
                 </svg>
                 <span className="opacity-70">Cursor</span>
               </span>
