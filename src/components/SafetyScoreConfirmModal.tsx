@@ -1,7 +1,8 @@
 import { HugeiconsIcon } from '@hugeicons/react';
-import { Shield01Icon, CheckmarkCircle02Icon, Alert02Icon } from '@hugeicons/core-free-icons';
+import { Shield01Icon } from '@hugeicons/core-free-icons';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "./ui/dialog";
 import { Button } from "./ui/button";
+import { getSafetyTierInfo } from '../utils/safetyScore';
 
 interface SafetyScoreConfirmModalProps {
   isOpen: boolean;
@@ -11,64 +12,13 @@ interface SafetyScoreConfirmModalProps {
   originalScore: number;
 }
 
-export function SafetyScoreConfirmModal({ 
-  isOpen, 
-  onClose, 
-  onConfirm, 
-  newScore, 
-  originalScore 
+export function SafetyScoreConfirmModal({
+  isOpen,
+  onClose,
+  onConfirm,
+  newScore,
+  originalScore
 }: SafetyScoreConfirmModalProps) {
-  
-  const getSafetyTierInfo = (tier: number) => {
-    switch (tier) {
-      case 5:
-        return {
-          name: 'Publish Ready',
-          textColor: 'text-green-700',
-          borderColor: '#16a34a',
-          backgroundColor: 'rgba(220, 252, 231, 0.5)',
-          icon: CheckmarkCircle02Icon,
-          description: 'Content is fully ready for immediate publication'
-        };
-      case 4:
-        return {
-          name: 'Good to Publish',
-          textColor: 'text-green-600',
-          borderColor: '#059669',
-          backgroundColor: 'rgba(220, 252, 231, 0.3)',
-          icon: CheckmarkCircle02Icon,
-          description: 'Content is suitable for publication with minimal concerns'
-        };
-      case 3:
-        return {
-          name: 'Review First',
-          textColor: 'text-amber-700',
-          borderColor: '#d97706',
-          backgroundColor: 'rgba(254, 243, 199, 0.5)',
-          icon: Shield01Icon,
-          description: 'Content should be reviewed before publishing'
-        };
-      case 2:
-        return {
-          name: 'Needs Work',
-          textColor: 'text-orange-700',
-          borderColor: '#ea580c',
-          backgroundColor: 'rgba(254, 215, 170, 0.5)',
-          icon: Alert02Icon,
-          description: 'Content requires significant editing before publication'
-        };
-      case 1:
-      default:
-        return {
-          name: 'Not Suitable',
-          textColor: 'text-red-700',
-          borderColor: '#dc2626',
-          backgroundColor: 'rgba(254, 202, 202, 0.5)',
-          icon: Alert02Icon,
-          description: 'Content is not suitable for publication'
-        };
-    }
-  };
 
   const newTierInfo = getSafetyTierInfo(newScore);
   const originalTierInfo = getSafetyTierInfo(originalScore);

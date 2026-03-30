@@ -34,25 +34,15 @@ const getPublishDate = (): Date => {
   return getRandomTimeInDay(twentyFourHoursAgo, 24);
 };
 
-// Convert old score (1-10) to new tier (1-5)
-const convertToTier = (oldScore: number): number => {
-  if (oldScore >= 9) return 5; // Prime
-  if (oldScore >= 7) return 4; // Ready
-  if (oldScore >= 5) return 3; // Low Risk
-  if (oldScore >= 3) return 2; // Moderate Risk
-  return 1; // High Risk
-};
-
 // Generate articles with dynamic dates
 const generateArticle = (base: any, index: number) => {
   const ingestionDate = getIngestionDate(index);
   return {
     ...base,
     ingestionTime: ingestionDate.toISOString(),
-    publishDate: base.status === 'published' 
+    publishDate: base.status === 'published'
       ? getPublishDate().toISOString().split('T')[0]
       : ingestionDate.toISOString().split('T')[0],
-    safetyScore: convertToTier(base.safetyScore) // Convert to tier system
   };
 };
 
@@ -169,7 +159,7 @@ const baseArticles = [
     source: 'Fox Sports',
     sourceIcon: 'foxsports',
     contentType: 'article' as const,
-    safetyScore: 7,
+    safetyScore: 3,
     newsType: 'Sports',
     subType: ['Football', 'World Cup'],
     status: 'pending' as const,
@@ -290,7 +280,7 @@ const baseArticles = [
     source: 'Cardiology Today',
     sourceIcon: 'cardiology',
     contentType: 'article' as const,
-    safetyScore: 8,
+    safetyScore: 4,
     newsType: 'Health',
     subType: ['Cardiology', 'Wearable Tech'],
     status: 'pending' as const,
@@ -428,7 +418,7 @@ const baseArticles = [
     source: 'Financial Times',
     sourceIcon: 'ft',
     contentType: 'article' as const,
-    safetyScore: 7,
+    safetyScore: 2,
     newsType: 'Business',
     subType: ['Cryptocurrency', 'Finance'],
     status: 'pending' as const,
@@ -549,7 +539,7 @@ const baseArticles = [
     source: 'Nature Climate Change',
     sourceIcon: 'nature',
     contentType: 'article' as const,
-    safetyScore: 8,
+    safetyScore: 5,
     newsType: 'World',
     subType: ['Climate Science', 'Antarctica'],
     status: 'pending' as const,
@@ -704,7 +694,7 @@ const baseArticles = [
     source: 'Ars Technica',
     sourceIcon: 'arstechnica',
     contentType: 'article' as const,
-    safetyScore: 7,
+    safetyScore: 6,
     newsType: 'Technology',
     subType: ['Wireless Technology', '6G'],
     status: 'pending' as const,
@@ -825,7 +815,7 @@ const baseArticles = [
     source: 'Social Media Today',
     sourceIcon: 'socialmediatoday',
     contentType: 'article' as const,
-    safetyScore: 7,
+    safetyScore: 1,
     newsType: 'Entertainment',
     subType: ['Social Media', 'Influencers'],
     status: 'pending' as const,
@@ -1182,10 +1172,7 @@ const baseArticles = [
 export const mockArticles = baseArticles.map((article, index) => {
   // Articles with specific dates already have ingestionTime and publishDate set
   if (article.ingestionTime && article.publishDate) {
-    return {
-      ...article,
-      safetyScore: convertToTier(article.safetyScore)
-    };
+    return article;
   }
   
   // Apply dynamic date generation for other articles
