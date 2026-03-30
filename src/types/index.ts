@@ -29,7 +29,7 @@ export type StoryStatus = 'live' | 'expired' | 'paused' | 'archived';
 export type TabType = 'news-publishing' | 'news-stories' | 'news-roundup';
 export type SubTabType = 'pending' | 'review' | 'rejected' | 'published' | 'live' | 'paused' | 'expired' | 'archive';
 
-export type SafetyTier = 1 | 2 | 3 | 4 | 5;
+export type SafetyTier = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
 export interface SafetyTierInfo {
   name: string;

@@ -65,7 +65,7 @@ export function SafetyScoreDropdown({
 
   const generateTierOptions = () => {
     const options = [];
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 10; i++) {
       const optionTierInfo = getSafetyTierInfo(i);
       const IconComponent = optionTierInfo.icon;
       const isOriginal = i === originalScore;

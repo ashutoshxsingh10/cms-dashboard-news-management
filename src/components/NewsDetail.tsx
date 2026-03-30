@@ -949,9 +949,8 @@ export function NewsDetail({
         isOpen={isScoreConfirmModalOpen}
         onClose={handleScoreCancel}
         onConfirm={handleScoreConfirm}
-        pendingScore={pendingSafetyScore}
-        currentScore={article.safetyScore}
-        originalScore={article.originalSafetyScore}
+        newScore={pendingSafetyScore ?? 0}
+        originalScore={article.originalSafetyScore || article.safetyScore}
       />
 
       {/* Individual Action Confirmation Modals */}
